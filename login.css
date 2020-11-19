@@ -1,0 +1,42 @@
+.container {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 15%;
+    width: 50%;
+    
+}
+
+.imgContainer {
+    background-color: yellow;
+    justify-content: space-around;
+}
+
+.formContainer {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+}
+
+.formFields input {
+    margin-left: 25%;
+    width: 50%;
+    
+}
+
+.formFields label {
+    margin-left: 25%;
+}
+
+.formContainer button {
+    margin-bottom: 5%;
+    margin-left: 37.5%;
+    width: 25%;
+    
+}
