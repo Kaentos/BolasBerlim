@@ -128,7 +128,7 @@ CREATE TABLE FicheiroSubmetido (
 
 CREATE TABLE Notificacao (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    "desc" TEXT NOT NULL,
+    descricao TEXT NOT NULL,
     data_criacao DATETIME DEFAULT NOW() NOT NULL,
     idTurma INT NOT NULL,
     idDisciplina INT NOT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE TipoCompromisso (
 
 CREATE TABLE Compromisso (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    "desc" TEXT NOT NULL,
+    descricao TEXT NOT NULL,
     data DATETIME NOT NULL,
     data_criacao DATETIME DEFAULT NOW() NOT NULL,
     idTipo INT NOT NULL,
