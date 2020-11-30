@@ -158,3 +158,32 @@ CREATE TABLE Compromisso (
     CONSTRAINT TB_Compromisso_Turma_FK FOREIGN KEY (idTurma) REFERENCES Turma(id)
 );
 
+CREATE TABLE Codigo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome TEXT NOT NULL,
+    codigo VARCHAR(10) NOT NULL,
+    data_criacao DATETIME DEFAULT NOW() NOT NULL,
+    data_fim DATETIME DEFAULT NULL,
+    idProfessor INT NOT NULL,
+    idDisciplina INT NOT NULL,
+    idTurma INT NOT NULL,
+    CONSTRAINT TB_Codigo_Professor_FK FOREIGN KEY (idProfessor) REFERENCES Professor(id),
+    CONSTRAINT TB_Codigo_Disciplina_FK FOREIGN KEY (idDisciplina) REFERENCES Disciplina(id),
+    CONSTRAINT TB_Codigo_Turma_FK FOREIGN KEY (idTurma) REFERENCES Turma(id)
+);
+
+CREATE TABLE Codigo_Aluno (
+    idCodigo INT NOT NULL,
+    idAluno INT NOT NULL,
+    data_presenca DATETIME DEFAULT NOW() NOT NULL,
+    CONSTRAINT TB_CodigoAluno_PKs PRIMARY KEY (idCodigo, idAluno),
+    CONSTRAINT TB_CodigoAluno_Codigo_FK FOREIGN KEY (idCodigo) REFERENCES Codigo(id),
+    CONSTRAINT TB_CodigoAluno_Aluno_FK FOREIGN KEY (idAluno) REFERENCES Aluno(id)
+);
+
+CREATE TRIGGER CodigoCheckLimit BEFORE INSERT ON Codigo FOR EACH ROW
+BEGIN
+    IF NEW.data_fim IS NULL THEN
+        SET NEW.data_fim = (SELECT DATE_ADD(NEW.data_criacao, INTERVAL 5 MINUTE));
+    END IF;
+END;
