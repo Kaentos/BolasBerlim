@@ -160,8 +160,7 @@ CREATE TABLE Compromisso (
 
 CREATE TABLE Codigo (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome TEXT NOT NULL,
-    codigo VARCHAR(10) NOT NULL,
+    nome VARCHAR(10) NOT NULL, /* ID, Codigo em si */
     data_criacao DATETIME DEFAULT NOW() NOT NULL,
     data_fim DATETIME DEFAULT NULL,
     idProfessor INT NOT NULL,
