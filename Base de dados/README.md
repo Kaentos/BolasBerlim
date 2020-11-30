@@ -13,7 +13,7 @@ CREATE TABLE, NOW(), DATETIME
 ### Regras de declarações:
 ##### Campo:
 * Deve seguir a seguinte ordem: `<nome campo> <tipo> DEFAULT <DEFAULT value> NOT NULL PRIMARY KEY AUTO_INCREMENT`
-* Exemplo: nome TEXT NOT NULL, id INT PRIMARY KEY AUTO_INCREMENT, data_criacao DATETIME DEFAULT NOW() NOT NULL
+* Exemplo: `nome TEXT NOT NULL`, `id INT PRIMARY KEY AUTO_INCREMENT`, `data_criacao DATETIME DEFAULT NOW() NOT NULL`
 
 ##### PRIMARY KEY:
 * Deve possuir AUTO_INCREMENT sempre que possivel
