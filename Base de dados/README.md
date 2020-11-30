@@ -1,7 +1,7 @@
 # Regras de alteração de SQL
 
 ##### ATENÇÃO:
-**Todo o texto dentro de `<>` é para ser trocado por outro texto sem `<>`, ex: `<nome>` = Aluno
+**Todo o texto dentro de `<>` é para ser trocado por outro texto sem `<>`, ex: `<nome>` = Aluno.<br>
 O não entendimento das regras deve ser comunicado ao criador da base de dados para ajudar [Kaentos](https://github.com/Kaentos)**
 
 #### Todo código SQL deve ser em maíusculas
