@@ -1,0 +1,29 @@
+/*
+* {
+    border: 5px black solid;
+}
+*/
+
+
+header {
+    border-bottom: 1px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   /* margin-bottom: 5%; */
+    padding: 1%;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 5%;
+}
+
+.headerProfile {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 5%;
+}
+

@@ -1,0 +1,59 @@
+header {
+    height: 10%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+.diasSemana {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+.content {
+    padding: 1%;
+}
+
+.disciplinasContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    padding: 1%;
+    
+}
+
+.disciplina {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 7%;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1%;
+}
+
+.compromissosContainer {
+    padding: 1%;
+}
+
+.notificacoesContainer {
+    padding: 1%;
+}
+
+.dia {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 5%;
+}

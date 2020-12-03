@@ -1,0 +1,112 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+.formContainerPessoas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+    
+    
+}
+
+.formContainerDisciplinas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.formContainerListaAlunos {
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1%;
+}
+
+.formBox {
+    border: 1px black solid;
+    display: flex;
+    width: 43%;
+    padding: 2.5%;
+}
+
+
+.formBox form {
+    font-size: 20px;
+    width: 100%;
+}
+
+.formBox p {
+    font-size: 25px;
+    text-align: center;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+.formRow label {
+    width: 25%;
+}
+
+.formRow input[type=text], input[type=password] {
+    box-sizing: border-box;
+    width: 75%;
+}
+
+.formBox input[type=submit] {
+    float: right;
+}
+
+.formRow select {
+    box-sizing: border-box;
+    width: 75%;
+}
+
+
+
+.listaAluno {
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5%;
+
+}
+
+.nomeAluno {
+    border: 1px black solid;
+    text-align: center;
+    width: 30%;
+}
+
+.numeroAluno {
+    border: 1px black solid;
+    text-align: center;
+    width: 25%;
+}
+
+.mailAluno {
+    border: 1px black solid;
+    text-align: center;
+    width: 40%;
+}
+
+.removeAluno {
+    border: 1px black solid;
+    justify-content: center;
+    width: 5%;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: flex-end;
+}

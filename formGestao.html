@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formGestao.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logoContainer">
+            <p>Logotipo</p>
+        </div>
+        <div class="headerProfile">
+            <p>Perfil</p>
+        </div>
+    </header>
+    <div class="mainContainer">
+        <div class="formContainerPessoas">
+            <div class="formBox">
+                <form action="">
+                    <p>Adicionar Aluno</p>
+                    <div class="formRow">
+                        <label for="nomeAluno">Nome:</label>
+                        <input type="text" name="nomeAluno">
+                    </div>
+                    <div class="formRow">
+                        <label for="numberAluno">Número de Aluno:</label>
+                        <input type="text" name="numberAluno">
+                    </div>
+                    <div class="formRow">
+                        <label for="emailAluno">Email:</label>
+                        <input type="text" name="emailAluno">
+                    </div>
+                    <div class="formRow">
+                        <label for="passwordAluno">Password:</label>
+                        <input type="password" name="passwordAluno">
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form> 
+            </div>
+            <div class="formBox">
+                <form action="">
+                    <p>Adicionar Professor</p>
+                    <div class="formRow">
+                        <label for="nomeProfessor">Nome:</label>
+                        <input type="text" name="nomeProfessor">
+                    </div>
+                    <div class="formRow">
+                        <label for="numberProfessor">Número de Aluno:</label>
+                        <input type="text" name="numberProfessor">
+                    </div>
+                    <div class="formRow">
+                        <label for="emailProfessor">Email:</label>
+                        <input type="text" name="emailProfessor">
+                    </div>
+                    <div class="formRow">
+                        <label for="passwordProfessor">Password:</label>
+                        <input type="password" name="passwordProfessor">
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div> 
+        </div>
+        <div class="formContainerDisciplinas">
+            <div class="formBox">
+                <form action="">
+                    <p>Adicionar Disciplina</p>
+                    <div class="formRow">
+                        <label for="nomeDisciplina">Nome:</label>
+                        <input type="text" name="nomeAluno">
+                    </div>
+                    <div class="formRow">
+                        <label for="selectProfessor">Selecionar professor:</label>
+                        <select name="opcaoProfessor">
+                            <option value="professorA">Professor A</option>
+                            <option value="professorB">Professor B</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+            <div class="formBox">
+                <form action="">
+                    <p>Adicionar Aluno á disciplina</p>
+                    <div class="formRow">
+                        <label for="selectAluno">Aluno:</label>
+                        <select name="opcaoAluno">
+                            <option value="alunoA">Aluno A</option>
+                            <option value="alunoB">Aluno B</option>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <label for="selectDisciplina">Selecione disciplina:</label>
+                        <select name="opcaoDisciplina">
+                            <option value="disciplinaA">Disciplina A</option>
+                            <option value="disciplinaB">Disciplina B</option>
+                        </select>
+                        
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+        </div>
+        <div class="searchbar">
+            <button>
+                ok
+            </button>
+            <input type="text" name="search" placeholder="search">
+        </div>
+        <div class="formContainerListaAlunos">
+            <div class="listaAluno">
+                <div class="nomeAluno">
+                    <p>aluno</p>
+                </div>
+                <div class="numeroAluno">
+                    <p>numero</p>
+                </div>
+                <div class="mailAluno">
+                    <p>mail</p>
+                </div>
+                <div class="removeAluno">
+                    <p>removeButton</p>
+                </div>
+            </div>
+            <div class="listaAluno">
+                <div class="nomeAluno">
+                    <p>aluno</p>
+                </div>
+                <div class="numeroAluno">
+                    <p>numero</p>
+                </div>
+                <div class="mailAluno">
+                    <p>mail</p>
+                </div>
+                <div class="removeAluno">
+                    <p>removeButton</p>
+                </div>
+            </div>
+            <p>Lista alunos</p>
+        </div>
+    </div>
+</body>
+</html>
