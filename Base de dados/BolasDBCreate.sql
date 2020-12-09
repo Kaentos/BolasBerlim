@@ -83,8 +83,10 @@ CREATE TABLE AnoLetivo (
 CREATE TABLE Turma (
     id INT PRIMARY KEY AUTO_INCREMENT,
     data_criacao DATETIME DEFAULT NOW() NOT NULL,
-    id_anoLetivo INT NOT NULL,
-    CONSTRAINT TB_Turma_Anoletivo_FK FOREIGN KEY (id_anoLetivo) REFERENCES AnoLetivo(id)
+    idCurso INT NOT NULL,
+    idAnoLetivo INT NOT NULL,
+    CONSTRAINT TB_Turma_Curso_FK FOREIGN KEY (idCurso) REFERENCES Curso(id),
+    CONSTRAINT TB_Turma_Anoletivo_FK FOREIGN KEY (idAnoLetivo) REFERENCES AnoLetivo(id)
 );
 
 CREATE TABLE Divisor (
