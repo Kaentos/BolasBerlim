@@ -5,15 +5,22 @@
     margin-top: 15%;
     width: 50%;
     
+    background-color: #afafaf4d;
+    
 }
 
 .imgContainer {
     justify-content: space-around;
+    text-align: center;
+    min-height: 100px;
+    border-bottom: 1px solid black;
 }
 
 .formContainer {
     display: flex;
     flex-direction: column;
+    padding: 0 25%;
+    margin-top: 5%;
 }
 
 .formFields {
@@ -22,17 +29,18 @@
 }
 
 .formFields input {
-    margin-left: 25%;
-    width: 50%;
-    
+    /*margin-left: 25%;
+    width: 50%;*/
+    margin: 5% 0;
 }
-
+/*
 .formFields label {
     margin-left: 25%;
-}
+}*/
 
 .formContainer button {
-    margin-bottom: 5%;
+    /*margin-bottom: 5%;*/
+    margin: 10% 0;
     margin-left: 37.5%;
     width: 25%;
     
