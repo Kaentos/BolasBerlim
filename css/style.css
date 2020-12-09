@@ -15,6 +15,14 @@ header {
     justify-content: space-between;
 }
 
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}
+
 .logoContainer {
     margin: 0 2%;
     padding: 1% 2.5%;
@@ -31,4 +39,27 @@ header {
 
 .profileImg{
     width: 75px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    width: 60%;
+    height: 50%;
+    justify-content: space-between;
+    
+}
+
+.navBarItem {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 2%;
+    color: black;
+}
+.active {
+    background-color: #6765658f;
 }

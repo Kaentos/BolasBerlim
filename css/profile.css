@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 8%;
+    width: 35%;
+    background-color: #afafaf4d;
+    font-size: 20px;
+}
+
+.imgContainer {
+    justify-content: space-around;
+    text-align: center;
+    min-height: 100px;
+    border-bottom: 1px solid black;
+    margin: 5%;
+}
+
+
+.infoContainer {
+    padding-left: 3%;
+}
+
+.acessoContainer {
+    margin: 1% 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.editarbtn {
+    background-color: #afafaf4d;
+    border:2px solid  #575353;
+    width: 35%;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
