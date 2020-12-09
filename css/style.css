@@ -26,6 +26,9 @@ header {
     margin: 0 2%;
     padding: 1% 2.5%;
     width: 5%;
-    background-color: #afafaf4d;
+    background-color: #afafaf2c;
 }
 
+.profileImg{
+    width: 75px;
+}
