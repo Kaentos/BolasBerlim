@@ -1,0 +1,139 @@
+.aulaColumn {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: burlywood;
+}
+
+.aulaFicheiros {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.aulaSubmicoes {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+   
+}
+
+.aulaFile {
+    display: flex;
+}
+
+.aulasubmicao {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    box-sizing: border-box;
+    width: 33%;
+}
+
+.aulaHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: cornflowerblue;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aulaContent {
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+}
+
+.tituloContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 32px;
+    background-color: cadetblue;
+    align-items: center;
+    height: 100px;
+}
+
+.listaAulas {
+    padding: 1%;
+    background-color: chartreuse;
+}
+
+.listaAulas > div {
+    margin-bottom: 5%;
+}
+
+.aulaTitulo {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    background-color: coral;
+    width: 40%;
+}
+
+.plusIcon {
+    width: 40px;
+}
+
+.newAula {
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newAula input {
+    margin-left: 1%;
+    font-size: 20px;
+    width: 35%;
+}
+
+.titulobotoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 100%;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.titlebtn {
+    display: flex;
+    justify-content: center;
+    background-color: #afafaf4d;
+    height:50%;
+    align-items: center;
+    padding: 2%;
+    text-align: center;
+    color: black;
+    width: 100px;
+}
+
+.tituloDescricao {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 33%;
+    margin-left: 2%;
+    
+}
+
+.tituloDescricao a{
+    margin-left: 5%;
+    font-size: 14px;
+}
+
+.profMenu {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.profbtn {
+    width: 25px;
+}
