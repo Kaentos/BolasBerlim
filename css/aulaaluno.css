@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 75%;
     height: 100%;
-    background-color: burlywood;
+    background-color: #afafaf4d;
 }
 
 .aulaFicheiros {
@@ -18,6 +18,7 @@
     flex-direction: row;
     width: 80%;
     justify-content: space-around;
+    padding: 0.5%;
    
 }
 
@@ -36,17 +37,17 @@
 .aulaContent {
     display: flex;
     flex-direction: row;
-    background-color: aqua;
+    background-color: #afafaf4d;
 }
 
 .tituloContainer {
     font-size: 32px;
-    background-color: cadetblue;
+    background-color: #afafaf4d;
 }
 
 .listaAulas {
     padding: 1%;
-    background-color: chartreuse;
+    background-color: #afafaf4d;
 }
 
 .listaAulas > div {
@@ -55,5 +56,5 @@
 
 .aulaTitulo {
     font-size: 24px;
-    background-color: coral;
+    background-color: #afafaf4d;
 }

@@ -54,12 +54,48 @@ header {
     padding: 1%;
     background-color: #afafaf4d;
     width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.compromissosRow{
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    padding: 2%;
+    margin-bottom: 2%;
+
+}
+.compromissosData{
+    width: 35%;
+}
+
+.compromissosBox{
+    width: 75%;
 }
 
 .notificacoesContainer {
     padding: 1%;
     background-color: #afafaf4d;
     width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.notificacoesRow{
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    padding: 2%;
+    margin-bottom: 2%;
+
+}
+
+.notificacoesName{
+    width: 35%;
+}
+
+.notificacoesBox{
+    width: 75%;
 }
 
 .dia {

@@ -1,0 +1,119 @@
+header {
+    height: 10%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+ 
+}
+
+.titlebtn {
+    display: flex;
+    justify-content: center;
+    background-color: #afafaf4d;
+    height:20%;
+    align-items: center;
+    padding: 2%;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+.notificacoesTitulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1%;
+    padding: 1%;
+}
+
+.notificacoesContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #afafaf4d;
+    padding: 1%;
+}
+
+.notificacoesRow{
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    justify-content: space-around;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.Selecionado{
+    size: 5%;
+}
+
+/*CHECK BOX*/
+
+/* O container da check box */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* esconde check box default  */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* cria a checkbox custom */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+
+/* Adiciona um fundo azul quando a check box é selecionada */
+.container input:checked ~ .checkmark {
+  background-color: #e67500;
+}
+
+/* Criar o marcador da check box e esconde quando nao esta selecionada */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+
+}
+
+/* Mostra o marcador quando selecionada */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Estilo do marcador */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}

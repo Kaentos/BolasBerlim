@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 75%;
     height: 100%;
-    background-color: burlywood;
+    background-color: #afafaf4d;
 }
 
 .aulaFicheiros {
@@ -36,7 +36,7 @@
 .aulaHeader {
     display: flex;
     flex-direction: row;
-    background-color: cornflowerblue;
+    background-color: #afafaf4d;
     justify-content: space-between;
     align-items: center;
 }
@@ -44,7 +44,7 @@
 .aulaContent {
     display: flex;
     flex-direction: row;
-    background-color: aqua;
+    background-color: #afafaf4d;
 }
 
 .tituloContainer {
@@ -52,14 +52,14 @@
     flex-direction: row;
     justify-content: space-between;
     font-size: 32px;
-    background-color: cadetblue;
+    background-color: #afafaf4d;
     align-items: center;
     height: 100px;
 }
 
 .listaAulas {
     padding: 1%;
-    background-color: chartreuse;
+    background-color: #afafaf4d;
 }
 
 .listaAulas > div {
@@ -70,7 +70,7 @@
     display: flex;
     flex-direction: row;
     font-size: 24px;
-    background-color: coral;
+    background-color: #afafaf4d;
     width: 40%;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .newAula {
-    background-color: crimson;
+    background-color: #afafaf4d;
     display: flex;
     justify-content: space-between;
     align-items: center;
