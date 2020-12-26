@@ -1,8 +1,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    /*margin: auto;*/
     margin-top: 8%;
+    margin-left: 32.5%;
     width: 35%;
     background-color: #afafaf4d;
     font-size: 20px;
@@ -36,3 +37,4 @@
     text-decoration: none;
     color: black;
 }
+

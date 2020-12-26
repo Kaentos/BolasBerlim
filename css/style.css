@@ -31,14 +31,66 @@ header {
 }
 
 .headerProfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 0 2%;
     padding: 1% 2.5%;
-    width: 5%;
+    width: 9%;
     background-color: #afafaf2c;
+    align-items: center;
 }
 
 .profileImg{
     width: 75px;
+}
+.profileNotificacoes{
+    width: 50px;
+    height: 50px;
+}
+
+.notificacoesBtn {
+    background-color: #afafaf4d;
+    border:2px solid  #575353;
+    width: 35%;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+/*MENUS ESCONDIDOS*/
+.profileMenu{
+    background-color: #ffffff;
+    display: none;
+    flex-direction: column;
+    float: right;
+    width: 6%;
+    margin-right: 5%;
+    margin-top: -30px;
+    text-align: center;
+    z-index: 9999;
+    border:  1px solid;
+}
+
+.profileMenuBtn{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+.notificacoesMenu{
+    background-color: #ffffff;
+    display: none;
+    flex-direction: column;
+    float: right;
+    margin-right: 6%;
+    margin-top: -30px;
+    text-align: center;
+    z-index: 9999;
+    border:  1px solid;
+    align-items: center;
+    padding: 0.5%;
 }
 
 .navbar {

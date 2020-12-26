@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/hiddenContent.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -22,10 +23,46 @@
                     <a href="calendario.html" class="navBarItem">Calendario</a>
                 </div>
             </div>
-            <div class="headerProfile">
+            <div class="headerProfile"  onclick="profileMenuFun()" >
+                <img onclick="notificacaoMenuFun()" class="profileNotificacoes" src="images/bell.png" alt="">
                 <a href="profile.html"><img class="profileImg" src="images/user.png" alt=""></a>
             </div>
+            
         </header>
+        <div id="notificacoesMenu" class="notificacoesMenu">
+            <p>
+                Prof.Paulo Lava. É para entregar...
+            </p>
+            <p>
+                Prof.Paulo Lava. É para entregar...
+            </p>
+            <p>
+                Prof.Paulo Lava. É para entregar...
+            </p>
+            <p>
+                Prof.Paulo Lava. É para entregar...
+            </p>
+            <a href="" class="notificacoesBtn">
+                Todas
+            </a>
+        </div>
+        <div id="profileMenu" class="profileMenu">
+            <a href="profile.html">
+                <div class="profileMenuBtn">
+                        Perfil    
+                </div>
+            </a>
+            <a href="editData.html">
+                <div class="profileMenuBtn">
+                        Definições    
+                </div>
+            </a>
+            <a href="home.html">
+                <div class="profileMenuBtn">
+                        logout    
+                </div>
+            </a>
+        </div>
     <div class="container">
         <div class="imgContainer">
             <img class="profileImg" src="images/user.png" alt="">
