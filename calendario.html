@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/calendar.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/hiddenContent.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -29,13 +30,13 @@
     </header>
 
     <div class="hiddenDivs">
-      <div class="addCompromissoContainer">
+      <div class="addCompromissoContainer" id="addCompromissoContainer">
         <div class="tituloWindow">
           <div class="descricaoWindow">
             <h2>Data: 20/10/1921</h2>
           </div>
           <div class="exitWindow">
-            <img src="images/fechar.png" onclick="listaFicheirosMenu()" />
+            <img src="images/fechar.png" onclick="addCompromisso()" />
           </div>
         </div>
         <div class="tituloCompromissos">
@@ -86,9 +87,9 @@
 
     <div class="mainContainer">
       <div class="main-content">
-        <div class="date">1</div>
-        <div class="date">2</div>
-        <div class="date">
+        <div class="date" onclick="addCompromisso()">1</div>
+        <div class="date" onclick="addCompromisso()">2</div>
+        <div class="date" onclick="addCompromisso()">
           3 <br />
           Entrega do relatório de Engenharia de Software
         </div>

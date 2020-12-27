@@ -36,3 +36,13 @@ function profileMenuFun() {
         content.style.display = "none";
     }
   }
+
+  function addCompromisso() {
+
+    var content = document.getElementById("addCompromissoContainer");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
