@@ -79,18 +79,61 @@ header {
     margin-bottom: 5%;
 }
 
-.notificacoesMenu{
-    background-color: #ffffff;
+
+.dropdownBox {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownBoxProfile {
+    position: relative;
+    display: inline-block;
+}
+
+.notificacoesMenu {
     display: none;
     flex-direction: column;
-    float: right;
-    margin-right: 6%;
-    margin-top: -30px;
-    text-align: center;
-    z-index: 9999;
-    border:  1px solid;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 257px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid;
     align-items: center;
-    padding: 0.5%;
+    padding: 7%;
+    right: -140px;
+}
+
+.notificacoesMenu p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profileMenus {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid;
+    align-items: center;
+    padding: 7%;
+    right: -26px;
+}
+
+.profileMenus a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownBoxProfile:hover .profileMenus{
+    display: flex;
 }
 
 .navbar {
