@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/aulaprofessor.css" />
+    <script src="js/hiddenContent.js"></script>
     <title>Document</title>
   </head>
 
@@ -28,35 +29,76 @@
         /></a>
       </div>
     </header>
+    <div class="hiddenDivs">
+      <div class="listaAlunosContainer" id="listaAlunosContainer">
+        <div class="tituloAlunos">
+          <h2>Todos os Alunos</h2>
+          <img src="images/fechar.png" onclick="listaAlunosMenu()" />
+        </div>
+
+        <div class="listaAlunos">
+          <div class="descricaoLista">
+            <p>Nome:</p>
+            <p>Número:</p>
+          </div>
+          <div class="listaAlunoRow">
+            <p>Carlos</p>
+            <p>19212323</p>
+          </div>
+          <div class="listaAlunoRow">
+            <p>Raquel</p>
+            <p>19212323</p>
+          </div>
+          <div class="listaAlunoRow">
+            <p>Maria</p>
+            <p>19212323</p>
+          </div>
+        </div>
+      </div>
+      <div class="listaFicheirosContainer" id="listaFicheirosContainer">
+        <div class="tituloWindow">
+            <div class="descricaoWindow">
+                <h2>Submissão Trabalho 1</h2>
+            </div>
+            <div class="exitWindow">
+                <img src="images/fechar.png" onclick="listaFicheirosMenu()" />
+            </div>
+        </div>
+        <div class="listaFicheiros">
+          <div class="descricaoListaFicheiro">
+            <p>Submissões:</p>
+          </div>
+          <div class="listaFicheiroRow">
+              <div class="dataFicheiro">
+                <p>21/10/2020 - 20:20:21</p>
+              </div>
+              <div class="nomeUtilizador">
+                <p>Carlos</p>
+              </div>
+              <div class="download">
+                <p>Download</p>
+              </div>
+          </div>
+          <div class="listaFicheiroRow">
+            <div class="dataFicheiro">
+              <p>21/10/2020 - 20:20:21</p>
+            </div>
+            <div class="nomeUtilizador">
+              <p>Carlos</p>
+            </div>
+            <div class="download">
+              <p>Download</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+    </div>
     <div class="mainContainer">
       <div class="tituloContainer">
         <div class="tituloDescricao">
           <p>titulo</p>
-          <a href="home.html" class="titlebtn">Alunos</a>
-        </div>
-        <div class="listaAlunosContainer">
-          <div class="tituloAlunos">
-            <h2>Todos os Alunos</h2>
-            <img src="images/fechar.png">
-          </div>
-          <div class="descricaoLista">
-              <p>Nome:</p>
-              <p>Número:</p>
-          </div>
-          <div class="listaAlunos">
-            <div class="listaAlunoRow">
-              <p>Carlos</p>
-              <p>19212323</p>
-            </div>
-            <div class="listaAlunoRow">
-              <p>Raquel</p>
-              <p>19212323</p>
-            </div>
-            <div class="listaAlunoRow">
-              <p>Maria</p>
-              <p>19212323</p>
-            </div>
-          </div>
+          <button class="titlebtn" onclick="listaAlunosMenu()">Alunos</button>
         </div>
         <div class="titulobotoes">
           <a href="#.html" class="titlebtn">Something</a>
@@ -66,6 +108,7 @@
       </div>
       <div class="listaAulas">
         lista inicio
+
         <div class="aulaContainer">
           <div class="aulaHeader">
             <div class="aulaTitulo">
@@ -73,17 +116,17 @@
               <div class="profMenu">
                 <div>
                   <a href=""
-                    ><img src="images/plus.png" alt="" class="profbtn"
+                    ><img src="images/visto.png" alt="" class="profbtn"
                   /></a>
                 </div>
                 <div>
                   <a href=""
-                    ><img src="images/plus.png" alt="" class="profbtn"
+                    ><img src="images/apagar.png" alt="" class="profbtn"
                   /></a>
                 </div>
                 <div>
                   <a href=""
-                    ><img src="images/plus.png" alt="" class="profbtn"
+                    ><img src="images/lista.png" alt="" class="profbtn"
                   /></a>
                 </div>
               </div>
@@ -104,17 +147,17 @@
                   <div class="profMenu">
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/visto.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/apagar.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/lista.png" alt="" class="profbtn"
                       /></a>
                     </div>
                   </div>
@@ -124,17 +167,17 @@
                   <div class="profMenu">
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/visto.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/apagar.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/lista.png" alt="" class="profbtn"
                       /></a>
                     </div>
                   </div>
@@ -142,22 +185,25 @@
               </div>
               <div class="aulaSubmicoes">
                 <div class="aulasubmicao">
-                  <h4>Titulo 1</h4>
+                  <h4>Submissão Trabalho 1</h4>
                   <div class="profMenu">
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/visto.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/apagar.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
-                      <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
-                      /></a>
+                      <button>
+                        <img
+                          src="images/lista.png"
+                          onclick="listaFicheirosMenu()"
+                        />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -166,18 +212,21 @@
                   <div class="profMenu">
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/visto.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
                       <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
+                        ><img src="images/apagar.png" alt="" class="profbtn"
                       /></a>
                     </div>
                     <div>
-                      <a href=""
-                        ><img src="images/plus.png" alt="" class="profbtn"
-                      /></a>
+                      <button>
+                        <img
+                          src="images/lista.png"
+                          onclick="listaFicheirosMenu()"
+                        />
+                      </button>
                     </div>
                   </div>
                 </div>

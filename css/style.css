@@ -58,6 +58,7 @@ header {
     text-decoration: none;
     color: black;
 }
+
 /*MENUS ESCONDIDOS*/
 .profileMenu{
     background-color: #ffffff;
@@ -78,7 +79,6 @@ header {
     font-size: 18px;
     margin-bottom: 5%;
 }
-
 
 .dropdownBox {
     position: relative;

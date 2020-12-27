@@ -16,3 +16,23 @@ function profileMenuFun() {
         content.style.display = "none";
     }
   }
+
+  function listaAlunosMenu() {
+
+    var content = document.getElementById("listaAlunosContainer");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
+
+  function listaFicheirosMenu() {
+
+    var content = document.getElementById("listaFicheirosContainer");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }

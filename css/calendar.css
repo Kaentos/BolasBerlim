@@ -217,3 +217,79 @@
   .date:nth-child(7n + 37):after {
     content: "Thu";
   }
+
+
+/* Hidden Div */
+
+.addCompromissoContainer {
+  background-color: #cecece;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  z-index: 50;
+  padding: 1%;
+}
+
+.tituloWindow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.descricaoWindow {
+  width: 85%;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.exitWindow {
+  width: 15%;
+  margin: auto;
+  margin-right: -6%;
+  margin-left: 6%;
+}
+
+.listaCompromissos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid black;
+  min-height: 180px;
+}
+
+.CompromissoRow {
+  width: 100%;
+  margin-left: 1%;
+}
+
+.addCompromisso {
+  display:flex;
+  flex-direction: column;
+}
+
+.inputCompromissos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputCompromissos img{
+  width: 100%;
+}
+
+.inputCompromissos button{
+  width: 4%;
+  background-color: transparent;
+  border: none;
+}
+
+.notificarCompromisso {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
