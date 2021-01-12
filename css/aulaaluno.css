@@ -1,0 +1,60 @@
+.aulaColumn {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: #afafaf4d;
+}
+
+.aulaFicheiros {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.aulaSubmicoes {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    padding: 0.5%;
+   
+}
+
+.aulaFile {
+    display: flex;
+}
+
+.aulasubmicao {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.aulaContent {
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+}
+
+.tituloContainer {
+    font-size: 32px;
+    background-color: #afafaf4d;
+}
+
+.listaAulas {
+    padding: 1%;
+    background-color: #afafaf4d;
+}
+
+.listaAulas > div {
+    margin-bottom: 5%;
+}
+
+.aulaTitulo {
+    font-size: 24px;
+    background-color: #afafaf4d;
+}

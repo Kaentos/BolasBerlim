@@ -1,0 +1,272 @@
+.aulaColumn {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background-color: #afafaf4d;
+}
+
+.aulaFicheiros {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.aulaSubmicoes {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+   
+}
+
+.aulaFile {
+    display: flex;
+}
+
+.aulasubmicao {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    box-sizing: border-box;
+    width: 33%;
+}
+
+.aulaHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aulaContent {
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+}
+
+.tituloContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 32px;
+    background-color: #afafaf4d;
+    align-items: center;
+    height: 100px;
+}
+
+.listaAulas {
+    padding: 1%;
+    background-color: #afafaf4d;
+}
+
+.listaAulas > div {
+    margin-bottom: 5%;
+}
+
+.aulaTitulo {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    background-color: #afafaf4d;
+    width: 40%;
+}
+
+.plusIcon {
+    width: 40px;
+}
+
+.newAula {
+    background-color: #afafaf4d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newAula input {
+    margin-left: 1%;
+    font-size: 20px;
+    width: 35%;
+}
+
+.titulobotoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 100%;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.titlebtn {
+    display: flex;
+    justify-content: center;
+    background-color: #afafaf4d;
+    height:50%;
+    align-items: center;
+    padding: 2%;
+    text-align: center;
+    color: black;
+    width: 100px;
+    border: none;
+    margin-left: 5%;
+}
+
+.tituloDescricao {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 33%;
+    margin-left: 2%;
+    
+}
+
+.tituloDescricao a{
+    margin-left: 5%;
+    font-size: 14px;
+}
+
+.profMenu {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.profMenu img {
+    width: 50%;
+    margin: 0%;
+}
+
+.profbtn {
+    width: 25px;
+}
+
+/* Popup lista de alunos */
+
+.listaAlunosContainer {
+    display: none;
+    flex-direction: column;
+    background-color: #afafaf;
+    width: 25%;
+    position: absolute;
+    padding: 2%;
+    left: 645px;
+    top: 200px;
+    z-index: 1;
+}
+
+.tituloAlunos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-left: 25%;
+}
+
+.listaAlunos {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.listaAlunoRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.listaAlunoRow p{
+    border: 1px solid black;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.descricaoLista {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: -10px;
+}
+/*
+.tituloAlunos img {
+    width: 10%;
+    height: 100%;
+}
+*/
+/* Popup lista de ficheiros */
+
+.listaFicheirosContainer {
+    background-color: #afafaf;
+    display: none;
+    flex-direction: column;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    padding: 1%;
+    z-index: 1;
+}
+
+
+.tituloWindow {
+    width: 100%;
+}
+
+.descricaoWindow {
+    width: 85%;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.exitWindow {
+    width: 15%;
+    margin: auto;
+    margin-right: -6%;
+    margin-left: 6%;
+}
+
+.tituloWindow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.descricaoListaFicheiro{
+    font-size: 24px;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.listaFicheiroRow {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    font-size: 18px;
+}
+
+.dataFicheiro {
+    width: 45%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.nomeUtilizador {
+    width: 35%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.download {
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+}
+

@@ -1,0 +1,107 @@
+header {
+    height: 10%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+ 
+}
+
+.diasSemana {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    padding: 1%;
+    background-color: #afafaf4d;
+}
+
+.content {
+    padding: 1%;
+}
+
+.disciplinasContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    padding: 1%;
+    background-color: #afafaf4d;
+    
+}
+
+.disciplina {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 7%;
+    background-color: #afafaf4d;
+    border-radius: 25px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1%;
+    background-color: #afafaf4d;
+}
+
+.compromissosContainer {
+    padding: 1%;
+    background-color: #afafaf4d;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.compromissosRow{
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    padding: 2%;
+    margin-bottom: 2%;
+
+}
+.compromissosData{
+    width: 35%;
+}
+
+.compromissosBox{
+    width: 75%;
+}
+
+.notificacoesContainer {
+    padding: 1%;
+    background-color: #afafaf4d;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.notificacoesRow{
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    padding: 2%;
+    margin-bottom: 2%;
+
+}
+
+.notificacoesName{
+    width: 35%;
+}
+
+.notificacoesBox{
+    width: 75%;
+}
+
+.dia {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 5%;
+    background-color: #afafaf4d;
+    border-radius: 25px;
+}

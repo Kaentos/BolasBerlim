@@ -1,0 +1,67 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+    text-align: center;
+}
+.mainContainer p{
+    font-size: 25px;
+}
+
+.formContainerPessoas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+    
+    
+}
+
+.formBox {
+    
+    display: flex;
+    width: 43%;
+    padding: 2.5%;
+    background-color: #afafaf4d;
+}
+
+
+.formBox form {
+    font-size: 20px;
+    width: 100%;
+}
+
+.formBox p {
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    align-items: center;
+}
+
+.formRow label {
+    width: 25%;
+}
+
+.formRow input[type=text], input[type=password] {
+    box-sizing: border-box;
+    width: 50%;
+}
+
+
+.formBox input[type=submit] {
+    float: left;
+}
+
+
+.userImage{
+    margin: 5%;
+}
+
+

@@ -1,0 +1,160 @@
+/*
+* {
+    border: 5px black solid;
+}
+*/
+
+
+header {
+    border-bottom: 1px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   /* margin-bottom: 5%; */
+    padding: 1%;
+    justify-content: space-between;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}
+
+.logoContainer {
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 5%;
+    background-color: #afafaf4d;
+}
+
+.headerProfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 2%;
+    padding: 1% 2.5%;
+    width: 9%;
+    background-color: #afafaf2c;
+    align-items: center;
+}
+
+.profileImg{
+    width: 75px;
+}
+.profileNotificacoes{
+    width: 50px;
+    height: 50px;
+}
+
+.notificacoesBtn {
+    background-color: #afafaf4d;
+    border:2px solid  #575353;
+    width: 35%;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+/*MENUS ESCONDIDOS*/
+.profileMenu{
+    background-color: #ffffff;
+    display: none;
+    flex-direction: column;
+    float: right;
+    width: 6%;
+    margin-right: 5%;
+    margin-top: -30px;
+    text-align: center;
+    z-index: 9999;
+    border:  1px solid;
+}
+
+.profileMenuBtn{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+.dropdownBox {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownBoxProfile {
+    position: relative;
+    display: inline-block;
+}
+
+.notificacoesMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 257px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid;
+    align-items: center;
+    padding: 7%;
+    right: -140px;
+}
+
+.notificacoesMenu p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profileMenus {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid;
+    align-items: center;
+    padding: 7%;
+    right: -26px;
+}
+
+.profileMenus a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownBoxProfile:hover .profileMenus{
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: #afafaf4d;
+    width: 60%;
+    height: 50%;
+    justify-content: space-between;
+    
+}
+
+.navBarItem {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 2%;
+    color: black;
+}
+.active {
+    background-color: #6765658f;
+}
