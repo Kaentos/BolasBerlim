@@ -209,16 +209,6 @@ INSERT INTO Curso_Disciplina VALUES (3,1), (3,4), (3,2), (3,13), (3,14);
 INSERT INTO Turma (id, idCurso, idAnoLetivo) VALUES
     (1,1,2), (2,2,2), (3,3,2), (4,1,3), (5,2,3), (6,3,3);
 
-CREATE TABLE Professor (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome TEXT NOT NULL,
-    email VARCHAR(256) UNIQUE NOT NULL,
-    password TEXT NOT NULL,
-    data_criacao DATETIME DEFAULT NOW() NOT NULL,
-    ultimo_login DATETIME DEFAULT NOW() NOT NULL,
-    CONSTRAINT TB_Professor_email_U UNIQUE (email)
-);
-
 INSERT INTO Professor (nome, email, password) VALUES
     ('Enzo Viegas', 'enzoviegas@abc.pt', MD5('enzoviegas')), ('Matheus Horta', 'matheushorta@abc.pt', MD5('matheushorta')),
     ('Jacira Pinhal', 'jacirapinhal@abc.pt', MD5('jacirapinhal')), ('Tamara Frota', 'tamarafrota@abc.pt', MD5('tamarafrota')),

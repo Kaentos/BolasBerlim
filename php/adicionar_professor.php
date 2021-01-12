@@ -15,14 +15,17 @@
         if ( strlen($professor["nome"]) <= 4 ) {
             mostraAlert("Nome de professor muito curto!");
             gotoFormGestao();
+            die();
         }
         if ( strlen($professor["email"]) <= 4 && strpos($professor["email"], "@abc.pt") == false ) {
             mostraAlert("Email de professor inválido!");
             gotoFormGestao();
+            die();
         }
         if ( strlen($_POST["passwordProfessor"]) <= 4 ) {
             mostraAlert("Password muito fraca!");
             gotoFormGestao();
+            die();
         }
 
         $query = "
@@ -36,6 +39,7 @@
         if ($stmt -> rowCount() > 0) {
             mostraAlert("Email de professor já existe!");
             gotoFormGestao();
+            die();
         }
 
         if ($professor["id"] != null) {
@@ -50,6 +54,7 @@
             if ($stmt -> rowCount() > 0) {
                 mostraAlert("ID de professor já existe!");
                 gotoFormGestao();
+                die();
             }
         }
 
@@ -68,6 +73,7 @@
         if ($stmt -> rowCount() > 0) {
             mostraAlert("Adicionou o professor!");
             gotoFormGestao();
+            die();
         } else {
             die("<h1>Erro critico, por favor proceda ao pedido de debug.</h1>");
         }
@@ -76,6 +82,7 @@
     } else {
         mostraAlert("Campos de professor inválidos!");
         gotoFormGestao();
+        die();
     }
     
 

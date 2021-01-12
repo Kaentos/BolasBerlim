@@ -15,11 +15,29 @@
         FROM Turma AS t
             INNER JOIN Curso AS c ON t.idCurso = c.id
             INNER JOIN AnoLetivo AS a ON t.idAnoLetivo = a.id
-        ORDER BY turmaId;
+        ORDER BY anoLetivo;
     ";
     $stmt = $dbo -> prepare($query);
     $stmt -> execute();
     $todasTurmas = $stmt -> fetchAll();
+
+    $query = "
+        SELECT *
+        FROM Disciplina
+        ORDER BY nome;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> execute();
+    $todasDisciplinas = $stmt -> fetchAll();
+
+    $query = "
+        SELECT *
+        FROM Curso
+        ORDER BY nome;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> execute();
+    $todosCursos = $stmt -> fetchAll();
 
 ?>
 
@@ -146,7 +164,18 @@
                     </div>
                     <input type="submit" value="Adicionar">
                 </form>
-            </div> 
+            </div>
+
+            <div class="formBox">
+                <form action="php/adicionar_curso.php" method="POST">
+                    <p>Adicionar curso</p>
+                    <div class="formRow">
+                        <label for="nomeCurso">Nome:</label>
+                        <input type="text" name="nomeCurso">
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
         </div>
 
 
@@ -163,7 +192,40 @@
                 </form>
             </div>
 
-
+            <div class="formBox">
+                <form action="">
+                    <p>Associar disciplina a curso</p>
+                    <div class="formRow">
+                        <label for="opcaoDisciplina">Selecione disciplina:</label>
+                        <select name="opcaoDisciplina">
+                            <?php
+                                foreach($todasDisciplinas as $disciplina) {
+                                    echo "
+                                        <option value='".$disciplina["id"]."'>
+                                            ".$disciplina["nome"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <label for="selectCurso">Selecione curso:</label>
+                        <select name="selectCurso">
+                            <?php
+                                foreach($todosCursos as $curso) {
+                                    echo "
+                                        <option value='".$curso["id"]."'>
+                                            ".$curso["nome"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
 
             <div class="formBox">
                 <form action="">

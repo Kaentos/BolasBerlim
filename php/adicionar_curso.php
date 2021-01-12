@@ -2,39 +2,39 @@
     include("bd.php");
     include("funcoes.php");
 
-    if ( isset($_POST["nomeDisciplina"]) ) {
+    if ( isset($_POST["nomeCurso"]) ) {
         
         
-        $disciplina = array(
-            "nome" => $_POST["nomeDisciplina"]
+        $curso = array(
+            "nome" => $_POST["nomeCurso"]
         );
 
-        if ( strlen($disciplina["nome"]) <= 4 ) {
-            mostraAlert("Nome de disciplina muito curto!");
+        if ( strlen($curso["nome"]) <= 4 ) {
+            mostraAlert("Nome de curso muito curto!");
             gotoFormGestao();
             die();
         }
 
         $query = "
             SELECT *
-            FROM Disciplina
+            FROM Curso
             WHERE LOWER(nome) = LOWER(:nome);
         ";
         $stmt = $dbo -> prepare($query);
-        $stmt -> execute($disciplina);
+        $stmt -> execute($curso);
         if ($stmt -> rowCount() > 0) {
-            mostraAlert("Nome de disciplina já existente!");
+            mostraAlert("Nome de curso já existente!");
             gotoFormGestao();
             die();
         }
 
         $query = "
-            INSERT INTO Disciplina (nome) VALUES (:nome);
+            INSERT INTO Curso (nome) VALUES (:nome);
         ";
         $stmt = $dbo -> prepare($query);
-        $stmt -> execute($disciplina);
+        $stmt -> execute($curso);
         if ($stmt -> rowCount() > 0) {
-            mostraAlert("Adicionou disciplina!");
+            mostraAlert("Adicionou curso!");
             gotoFormGestao();
             die();
         } else {
@@ -43,7 +43,7 @@
         
 
     } else {
-        mostraAlert("Campos de disciplina inválidos!");
+        mostraAlert("Campos de curso inválidos!");
         gotoFormGestao();
         die();
     }

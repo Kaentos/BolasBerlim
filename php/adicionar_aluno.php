@@ -14,14 +14,17 @@
         if ( strlen($aluno["nome"]) <= 4 ) {
             mostraAlert("Nome de aluno muito curto!");
             gotoFormGestao();
+            die();
         }
         if ( strlen($aluno["email"]) <= 4 && strpos($aluno["email"], "@abccampus.pt") == false ) {
             mostraAlert("Email inválido!");
             gotoFormGestao();
+            die();
         }
         if ( strlen($_POST["passwordAluno"]) <= 4 ) {
             mostraAlert("Password muito fraca!");
             gotoFormGestao();
+            die();
         }
 
         $query = "
@@ -35,6 +38,7 @@
         if ($stmt -> rowCount() > 0) {
             mostraAlert("Email já existe!");
             gotoFormGestao();
+            die();
         }
 
         if ($aluno["id"] != null) {
@@ -49,6 +53,7 @@
             if ($stmt -> rowCount() > 0) {
                 mostraAlert("ID de aluno já existe!");
                 gotoFormGestao();
+                die();
             }
         }
 
@@ -67,6 +72,7 @@
         if ($stmt -> rowCount() > 0) {
             mostraAlert("Adicionou o aluno!");
             gotoFormGestao();
+            die();
         } else {
             die("<h1>Erro critico, por favor proceda ao pedido de debug.</h1>");
         }
@@ -75,6 +81,7 @@
     } else {
         mostraAlert("Campos de aluno inválidos!");
         gotoFormGestao();
+        die();
     }
     
 
