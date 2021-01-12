@@ -38,7 +38,8 @@ CREATE TABLE ProfessorContacto (
 CREATE TABLE Disciplina (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome TEXT NOT NULL,
-    data_criacao DATETIME DEFAULT NOW()
+    data_criacao DATETIME DEFAULT NOW(),
+    CONSTRAINT TB_Disciplina_nome_U UNIQUE (nome)
 );
 
 CREATE TABLE Curso_Disciplina (
@@ -207,3 +208,23 @@ INSERT INTO Curso_Disciplina VALUES (3,1), (3,4), (3,2), (3,13), (3,14);
 
 INSERT INTO Turma (id, idCurso, idAnoLetivo) VALUES
     (1,1,2), (2,2,2), (3,3,2), (4,1,3), (5,2,3), (6,3,3);
+
+CREATE TABLE Professor (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome TEXT NOT NULL,
+    email VARCHAR(256) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    data_criacao DATETIME DEFAULT NOW() NOT NULL,
+    ultimo_login DATETIME DEFAULT NOW() NOT NULL,
+    CONSTRAINT TB_Professor_email_U UNIQUE (email)
+);
+
+INSERT INTO Professor (nome, email, password) VALUES
+    ('Enzo Viegas', 'enzoviegas@abc.pt', MD5('enzoviegas')), ('Matheus Horta', 'matheushorta@abc.pt', MD5('matheushorta')),
+    ('Jacira Pinhal', 'jacirapinhal@abc.pt', MD5('jacirapinhal')), ('Tamara Frota', 'tamarafrota@abc.pt', MD5('tamarafrota')),
+    ('Alisa Barreira', 'alisabarreira@abc.pt', MD5('alisabarreira')), ('Teotónio Mourato', 'teotoniomourato@abc.pt', MD5('teotoniomourato')),
+    ('Bárbara Moreno', 'barbaramoreno@abc.pt', MD5('barbaramoreno')), ('Samara Boga', 'samaraboga@abc.pt', MD5('samaraboga')),
+    ('Fatumata Lacerda', 'fatumatalacerda@abc.pt', MD5('fatumatalacerda')), ('Georgi Figueiro', 'georgifigueiro@abc.pt', MD5('georgifigueiro')), 
+    ('Isabel Muniz', 'isabelmuniz@abc.pt', MD5('isabelmuniz')), ('Lígia Varanda', 'ligiavaranda@abc.pt', MD5('ligiavaranda')),
+    ('Benício Maranhão', 'beniciomaranhao@abc.pt', MD5('beniciomaranhao')), ('Alba Jesus', 'albajesus@abc.pt', MD5('albajesus')),
+    ('Giulia Arouca', 'giuliaarouca@abc.pt', MD5('giuliaarouca')), ('Elizabeth Leitão', 'elizabethleitao@abc.pt', MD5('elizabethleitao'));

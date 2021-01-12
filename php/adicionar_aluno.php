@@ -3,8 +3,6 @@
     include("funcoes.php");
 
     if ( isset($_POST["nomeAluno"]) && isset($_POST["numberAluno"]) && isset($_POST["emailAluno"]) && isset($_POST["passwordAluno"]) && isset($_POST["turmaAluno"]) ) {
-        
-        
         $aluno = array(
             "id" => strlen($_POST["numberAluno"]) == 0 ? null : $_POST["nomeAluno"],
             "nome" => $_POST["nomeAluno"],
@@ -17,7 +15,7 @@
             mostraAlert("Nome de aluno muito curto!");
             gotoFormGestao();
         }
-        if ( strlen($aluno["email"]) <= 4 && strpos($aluno["email"], "@") == false ) {
+        if ( strlen($aluno["email"]) <= 4 && strpos($aluno["email"], "@abccampus.pt") == false ) {
             mostraAlert("Email inválido!");
             gotoFormGestao();
         }
@@ -58,6 +56,7 @@
             $query = "
                 INSERT INTO Aluno (nome, email, password, idTurma) VALUES (:nome, :email, :password, :idTurma);
             ";
+            unset($aluno["id"]);
         } else {
             $query = "
                 INSERT INTO Aluno (id, nome, email, password, idTurma) VALUES (:id, :nome, :email, :password, :idTurma);

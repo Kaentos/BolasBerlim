@@ -90,23 +90,23 @@
                 <form action="php/adicionar_aluno.php" method="POST">
                     <p>Adicionar Aluno</p>
                     <div class="formRow">
-                        <label for="nomeAluno">Nome:</label>
+                        <label for="nomeAluno">Nome:<sup>*</sup></label>
                         <input type="text" name="nomeAluno" required>
                     </div>
                     <div class="formRow">
                         <label for="numberAluno">Número de Aluno:</label>
-                        <input type="number" name="numberAluno" required>
+                        <input type="number" name="numberAluno">
                     </div>
                     <div class="formRow">
-                        <label for="emailAluno">Email:</label>
+                        <label for="emailAluno">Email:<sup>*</sup></label>
                         <input type="email" name="emailAluno" required>
                     </div>
                     <div class="formRow">
-                        <label for="passwordAluno">Password:</label>
+                        <label for="passwordAluno">Password:<sup>*</sup></label>
                         <input type="password" name="passwordAluno" required>
                     </div>
                     <div class="formRow">
-                        <label for="turmaAluno">Selecione turma:</label>
+                        <label for="turmaAluno">Selecione turma:<sup>*</sup></label>
                         <select name="turmaAluno">
                             <?php
                                 foreach($todasTurmas as $turma) {
@@ -126,23 +126,23 @@
 
 
             <div class="formBox">
-                <form action="">
+                <form action="php/adicionar_professor.php" method="POST">
                     <p>Adicionar Professor</p>
                     <div class="formRow">
-                        <label for="nomeProfessor">Nome:</label>
-                        <input type="text" name="nomeProfessor">
+                        <label for="nomeProfessor">Nome:<sup>*</sup></label>
+                        <input type="text" name="nomeProfessor" required>
                     </div>
                     <div class="formRow">
-                        <label for="numberProfessor">Número de Aluno:</label>
-                        <input type="text" name="numberProfessor">
+                        <label for="numberProfessor">Número de professor:</label>
+                        <input type="number" name="numberProfessor">
                     </div>
                     <div class="formRow">
-                        <label for="emailProfessor">Email:</label>
-                        <input type="text" name="emailProfessor">
+                        <label for="emailProfessor">Email:<sup>*</sup></label>
+                        <input type="email" name="emailProfessor" required>
                     </div>
                     <div class="formRow">
-                        <label for="passwordProfessor">Password:</label>
-                        <input type="password" name="passwordProfessor">
+                        <label for="passwordProfessor">Password:<sup>*</sup></label>
+                        <input type="password" name="passwordProfessor" required>
                     </div>
                     <input type="submit" value="Adicionar">
                 </form>
@@ -153,18 +153,11 @@
 
         <div class="formContainerDisciplinas">
             <div class="formBox">
-                <form action="">
+                <form action="php/adicionar_disciplina.php" method="POST">
                     <p>Adicionar Disciplina</p>
                     <div class="formRow">
                         <label for="nomeDisciplina">Nome:</label>
-                        <input type="text" name="nomeAluno">
-                    </div>
-                    <div class="formRow">
-                        <label for="selectProfessor">Selecionar professor:</label>
-                        <select name="opcaoProfessor">
-                            <option value="professorA">Professor A</option>
-                            <option value="professorB">Professor B</option>
-                        </select>
+                        <input type="text" name="nomeDisciplina">
                     </div>
                     <input type="submit" value="Adicionar">
                 </form>
@@ -174,7 +167,7 @@
 
             <div class="formBox">
                 <form action="">
-                    <p>Adicionar Aluno á disciplina</p>
+                    <p>Adicionar Professor á disciplina</p>
                     <div class="formRow">
                         <label for="selectAluno">Aluno:</label>
                         <select name="opcaoAluno">
