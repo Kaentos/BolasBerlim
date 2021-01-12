@@ -15,7 +15,7 @@
         FROM Turma AS t
             INNER JOIN Curso AS c ON t.idCurso = c.id
             INNER JOIN AnoLetivo AS a ON t.idAnoLetivo = a.id
-        ORDER BY anoLetivo;
+        ORDER BY anoLetivo, curso;
     ";
     $stmt = $dbo -> prepare($query);
     $stmt -> execute();
@@ -193,7 +193,7 @@
             </div>
 
             <div class="formBox">
-                <form action="">
+                <form action="php/adicionar_disciplinaCurso.php" method="POST">
                     <p>Associar disciplina a curso</p>
                     <div class="formRow">
                         <label for="opcaoDisciplina">Selecione disciplina:</label>
@@ -210,8 +210,8 @@
                         </select>
                     </div>
                     <div class="formRow">
-                        <label for="selectCurso">Selecione curso:</label>
-                        <select name="selectCurso">
+                        <label for="opcaoCurso">Selecione curso:</label>
+                        <select name="opcaoCurso">
                             <?php
                                 foreach($todosCursos as $curso) {
                                     echo "
