@@ -188,7 +188,7 @@ CREATE TABLE Codigo_Aluno (
 
 
 /* INSERTS */
-INSERT INTO AnoLetivo VALUES (1,'19/20'), (2, '20/21'), (3, '21/22');
+INSERT INTO AnoLetivo VALUES (1, '20/21'), (2, '21/22'), (3, '22/23'), (4, '23/24'), (5, '24/25');
 
 INSERT INTO Curso (id, nome) VALUES 
     (1, 'Engenharia Informática'), (2, 'Engenharia Industrial'), (3, 'Tecnologias da Informação e Multimédia');
@@ -207,7 +207,7 @@ INSERT INTO Disciplina (id, nome) VALUES
 INSERT INTO Curso_Disciplina VALUES (3,1), (3,4), (3,2), (3,13), (3,14);
 
 INSERT INTO Turma (id, idCurso, idAnoLetivo) VALUES
-    (1,1,2), (2,2,2), (3,3,2), (4,1,3), (5,2,3), (6,3,3);
+    (1,1,1), (2,2,1), (3,3,1), (4,1,2), (5,2,2), (6,3,2);
 
 INSERT INTO Professor (nome, email, password) VALUES
     ('Enzo Viegas', 'enzoviegas@abc.pt', MD5('enzoviegas')), ('Matheus Horta', 'matheushorta@abc.pt', MD5('matheushorta')),

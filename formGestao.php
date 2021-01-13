@@ -48,6 +48,15 @@
     $stmt -> execute();
     $todosProfessores = $stmt -> fetchAll();
 
+    $query = "
+        SELECT *
+        FROM AnoLetivo
+        ORDER BY nome;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> execute();
+    $todosAnosLetivos = $stmt -> fetchAll();
+
 ?>
 
 
@@ -139,7 +148,81 @@
                                 foreach($todasTurmas as $turma) {
                                     echo "
                                         <option value='".$turma["turmaId"]."'>
-                                            ".$turma["curso"]." - ".$turma["anoLetivo"]."
+                                            ".$turma["anoLetivo"]." - ".$turma["curso"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form> 
+            </div>
+
+
+
+            <div class="formBox">
+                <form action="php/adicionar_professor.php" method="POST">
+                    <p>Adicionar Professor</p>
+                    <div class="formRow">
+                        <label for="nomeProfessor">Nome:<sup>*</sup></label>
+                        <input type="text" name="nomeProfessor" required>
+                    </div>
+                    <div class="formRow">
+                        <label for="numberProfessor">Número de professor:</label>
+                        <input type="number" name="numberProfessor">
+                    </div>
+                    <div class="formRow">
+                        <label for="emailProfessor">Email:<sup>*</sup></label>
+                        <input type="email" name="emailProfessor" required>
+                    </div>
+                    <div class="formRow">
+                        <label for="passwordProfessor">Password:<sup>*</sup></label>
+                        <input type="password" name="passwordProfessor" required>
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+
+            <div class="formBox">
+                <form action="php/adicionar_curso.php" method="POST">
+                    <p>Adicionar curso</p>
+                    <div class="formRow">
+                        <label for="nomeCurso">Nome:</label>
+                        <input type="text" name="nomeCurso">
+                    </div>
+                    <input type="submit" value="Adicionar">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="formContainerPessoas">
+            <div class="formBox">
+                <form action="php/adicionar_turma.php" method="POST">
+                    <p>Criar turma</p>
+                    <div class="formRow">
+                        <label for="opcaoCurso">Selecione curso:<sup>*</sup></label>
+                        <select name="opcaoCurso">
+                            <?php
+                                foreach($todosCursos as $curso) {
+                                    echo "
+                                        <option value='".$curso["id"]."'>
+                                            ".$curso["nome"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <label for="opcaoAnoLetivo">Selecione ano letivo:<sup>*</sup></label>
+                        <select name="opcaoAnoLetivo">
+                            <?php
+                                foreach($todosAnosLetivos as $anoLetivo) {
+                                    echo "
+                                        <option value='".$anoLetivo["id"]."'>
+                                            ".$anoLetivo["nome"]."
                                         </option>
                                     ";
                                 }
