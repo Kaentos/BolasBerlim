@@ -39,6 +39,15 @@
     $stmt -> execute();
     $todosCursos = $stmt -> fetchAll();
 
+    $query = "
+        SELECT *
+        FROM Professor
+        ORDER BY id;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> execute();
+    $todosProfessores = $stmt -> fetchAll();
+
 ?>
 
 
@@ -228,20 +237,34 @@
             </div>
 
             <div class="formBox">
-                <form action="">
+                <form action="./php/adicionar_professorDisciplina.php" method="POST">
                     <p>Adicionar Professor á disciplina</p>
                     <div class="formRow">
-                        <label for="selectAluno">Aluno:</label>
-                        <select name="opcaoAluno">
-                            <option value="alunoA">Aluno A</option>
-                            <option value="alunoB">Aluno B</option>
+                        <label for="selectAluno">Professor:</label>
+                        <select name="opcaoProfessor">
+                            <?php
+                                foreach($todosProfessores as $professor) {
+                                    echo "
+                                        <option value='".$professor["id"]."'>
+                                            ".$professor["id"]." - ".$professor["nome"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="formRow">
                         <label for="selectDisciplina">Selecione disciplina:</label>
                         <select name="opcaoDisciplina">
-                            <option value="disciplinaA">Disciplina A</option>
-                            <option value="disciplinaB">Disciplina B</option>
+                            <?php
+                                foreach($todasDisciplinas as $disciplina) {
+                                    echo "
+                                        <option value='".$disciplina["id"]."'>
+                                            ".$disciplina["nome"]."
+                                        </option>
+                                    ";
+                                }
+                            ?>
                         </select>
                     </div>
                     <input type="submit" value="Adicionar">
