@@ -2,9 +2,12 @@
 
     include("./php/bd.php");
     $query = "
-        SELECT *
-        FROM Aluno
-        ORDER BY id;
+        SELECT a.id, a.nome, a.email, c.nome AS curso, al.nome AS anoLetivo
+        FROM Aluno AS a
+            INNER JOIN Turma AS t ON a.idTurma = t.id
+            INNER JOIN Curso AS c ON t.idCurso = c.id
+            INNER JOIN AnoLetivo al ON t.idAnoLetivo = al.id
+        ORDER BY a.id;
     ";
     $stmt = $dbo -> prepare($query);
     $stmt -> execute();
@@ -33,7 +36,7 @@
     $query = "
         SELECT *
         FROM Curso
-        ORDER BY nome;
+        ORDER BY id;
     ";
     $stmt = $dbo -> prepare($query);
     $stmt -> execute();
@@ -373,6 +376,9 @@
                 <div class="mailAluno">
                     <p>Email</p>
                 </div>
+                <div class="mailAluno">
+                    <p>Turma</p>
+                </div>
                 <div class="removeAluno">
                     <p>Remover</p>
                 </div>
@@ -390,8 +396,119 @@
                             <div class='mailAluno'>
                                 <p>". $aluno["email"] ."</p>
                             </div>
+                            <div class='mailAluno'>
+                                <p>". $aluno["anoLetivo"] ." - ". $aluno["curso"] ."</p>
+                            </div>
                             <div class='removeAluno'>
                                 <a href='./php/eliminar_aluno.php?id=". $aluno["id"] ."'>
+                                    <img width='25' height='25' src='./images/trash.svg'>    
+                                </a>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
+        </div>
+
+        <p>Lista professores</p>
+        <div class="formContainerListaAlunos">
+            <div class="listaAluno">
+                <div class="numeroAluno">
+                    <p>ID Professor</p>
+                </div>
+                <div class="nomeAluno">
+                    <p>Nome</p>
+                </div>
+                <div class="mailAluno">
+                    <p>Email</p>
+                </div>
+                <div class="removeAluno">
+                    <p>Remover</p>
+                </div>
+            </div>
+            <?php
+                foreach($todosProfessores as $professor) {
+                    echo "
+                        <div class='listaAluno'>
+                            <div class='numeroAluno'>
+                                <p>". $professor["id"] ."</p>
+                            </div>
+                            <div class='nomeAluno'>
+                                <p>". $professor["nome"] ."</p>
+                            </div>
+                            <div class='mailAluno'>
+                                <p>". $professor["email"] ."</p>
+                            </div>
+                            <div class='removeAluno'>
+                                <a href='./php/eliminar_professor.php?id=". $professor["id"] ."'>
+                                    <img width='25' height='25' src='./images/trash.svg'>    
+                                </a>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
+        </div>
+
+        <p>Lista cursos</p>
+        <div class="formContainerListaAlunos">
+            <div class="listaAluno">
+                <div class="numeroAluno">
+                    <p>ID curso</p>
+                </div>
+                <div class="nomeAluno">
+                    <p>Nome</p>
+                </div>
+                <div class="removeAluno">
+                    <p>Remover</p>
+                </div>
+            </div>
+            <?php
+                foreach($todosCursos as $curso) {
+                    echo "
+                        <div class='listaAluno'>
+                            <div class='numeroAluno'>
+                                <p>". $curso["id"] ."</p>
+                            </div>
+                            <div class='nomeAluno'>
+                                <p>". $curso["nome"] ."</p>
+                            </div>
+                            <div class='removeAluno'>
+                                <a href='./php/eliminar_curso.php?id=". $curso["id"] ."'>
+                                    <img width='25' height='25' src='./images/trash.svg'>    
+                                </a>
+                            </div>
+                        </div>
+                    ";
+                }
+            ?>
+        </div>
+
+        <p>Lista disciplinas</p>
+        <div class="formContainerListaAlunos">
+            <div class="listaAluno">
+                <div class="numeroAluno">
+                    <p>ID disciplina</p>
+                </div>
+                <div class="nomeAluno">
+                    <p>Nome</p>
+                </div>
+                <div class="removeAluno">
+                    <p>Remover</p>
+                </div>
+            </div>
+            <?php
+                foreach($todasDisciplinas as $disciplina) {
+                    echo "
+                        <div class='listaAluno'>
+                            <div class='numeroAluno'>
+                                <p>". $disciplina["id"] ."</p>
+                            </div>
+                            <div class='nomeAluno'>
+                                <p>". $disciplina["nome"] ."</p>
+                            </div>
+                            <div class='removeAluno'>
+                                <a href='./php/eliminar_disciplina.php?id=". $disciplina["id"] ."'>
                                     <img width='25' height='25' src='./images/trash.svg'>    
                                 </a>
                             </div>

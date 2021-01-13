@@ -5,8 +5,8 @@
         include("funcoes.php");
 
         $query = "
-            DELETE FROM Aluno
-            WHERE id = :id;
+            DELETE FROM Curso_Disciplina
+            WHERE idCurso = :idCurso AND idDisciplina = :idDisciplina;
         ";
         $stmt = $dbo -> prepare($query);
         $stmt -> bindValue("id", $_GET["id"]);

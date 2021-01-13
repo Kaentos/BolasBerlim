@@ -5,7 +5,7 @@
         include("funcoes.php");
 
         $query = "
-            DELETE FROM Aluno
+            DELETE FROM Curso
             WHERE id = :id;
         ";
         $stmt = $dbo -> prepare($query);
