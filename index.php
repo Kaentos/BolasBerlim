@@ -1,5 +1,9 @@
 <?php
     include("./php/funcoes.php");
+    if (getLoginData() == null) {
+        gotoLogin();
+    }
+    seAdminVaiDashboard();
 ?>
 
 <!DOCTYPE html>

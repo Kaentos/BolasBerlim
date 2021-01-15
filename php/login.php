@@ -16,7 +16,7 @@
 			$tipo = TIPO_ALUNO;
 		} elseif ( strpos($user["email"], "@abcadmin.pt") ) {
 			$tabela = "Administrador";
-			$tipo = TIPO_PROFESSOR;
+			$tipo = TIPO_ADMIN;
 		} else {
 			mostraAlert("Email inválido!");
 			gotoLogin();

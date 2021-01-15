@@ -24,7 +24,7 @@
     function gotoFormGestao() {
         echo "
             <script type='text/javascript'>
-                window.location.href = '../formGestao.php';
+                window.location.href = '/Real-Learn/formGestao.php';
             </script>
         ";
     }
@@ -32,7 +32,7 @@
     function gotoLogin() {
         echo "
             <script type='text/javascript'>
-                window.location.href = '../login.php';
+                window.location.href = '/Real-Learn/login.php';
             </script>
         ";
     }
@@ -43,6 +43,22 @@
                 window.location.href = '/Real-Learn/';
             </script>
         ";
+    }
+
+    function seAdminVaiDashboard() {
+        if ($_SESSION["login_data"]["tipo"] == TIPO_ADMIN) {
+            echo "
+                <script type='text/javascript'>
+                    window.location.href = '/Real-Learn/formGestao.php';
+                </script>
+            ";
+        }
+    }
+
+    function seNaoAdminVaiIndex() {
+        if ($_SESSION["login_data"]["tipo"] != TIPO_ADMIN) {
+            gotoIndex();
+        }
     }
 
 ?>
