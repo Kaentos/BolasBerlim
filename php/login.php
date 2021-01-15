@@ -1,14 +1,12 @@
 <?php
-	include("bd.php");
-	include("funcoes.php");
-	
 	if(isset($_POST["user"]) and isset($_POST["password"])){
+		include("bd.php");
+		include("funcoes.php");
 		
 		$user = array(
 			"email" => $_POST["user"],
 			"password" => md5($_POST["password"])
 		);
-		
 
 		if ( strpos($user["email"], "@abc.pt") ) {
 			$tabela = "Professor";
@@ -20,7 +18,9 @@
 			$tabela = "Administrador";
 			$tipo = TIPO_PROFESSOR;
 		} else {
-			die("Pichota errada comparsa");
+			mostraAlert("Email inválido!");
+			gotoLogin();
+			exit();
 		}
 
 		$query = "
@@ -28,7 +28,6 @@
 			FROM ".$tabela."
 			WHERE email = :email AND password = :password;
 		";
-		// prepara a query
 		$stmt = $dbo -> prepare($query);
 		$stmt -> execute($user);
 
@@ -40,12 +39,16 @@
 				"tipo" => $tipo
 			);
 			header("location: ../home.html");
-			die();
+			exit();
 		} else {
-			exit("népias brother");
+			mostraAlert("Dados incorretos!");
+			gotoLogin();
+			exit();
 		}
 		
 	}else{
-		exit('Preencha o utilizador e password');
+		mostraAlert("Dados incorretos!");
+		gotoLogin();
+		exit();
 	}
 ?>

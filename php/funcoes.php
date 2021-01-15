@@ -37,4 +37,12 @@
         ";
     }
 
+    function gotoIndex() {
+        echo "
+            <script type='text/javascript'>
+                window.location.href = '/Real-Learn/';
+            </script>
+        ";
+    }
+
 ?>
