@@ -188,6 +188,11 @@ CREATE TABLE Codigo_Aluno (
 
 
 /* INSERTS */
+INSERT INTO Administrador (nome, email, password) VALUES
+    ('Miguel Magueijo', 'miguel@abcadmin.pt', MD5('admin')),
+    ('Paulo Pinguicha', 'paulo@abcadmin.pt', MD5('admin')),
+    ('Tomas Frois', 'tomas@abcadmin.pt', MD5('admin'));
+
 INSERT INTO AnoLetivo VALUES (1, '20/21'), (2, '21/22'), (3, '22/23'), (4, '23/24'), (5, '24/25');
 
 INSERT INTO Curso (id, nome) VALUES 

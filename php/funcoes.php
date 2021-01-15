@@ -1,4 +1,17 @@
 <?php
+    session_start();
+
+    define("TIPO_ADMIN", "Administrador");
+    define("TIPO_ALUNO", "Aluno");
+    define("TIPO_PROFESSOR", "Professor");
+
+    function getLoginData() {
+        if ( isset($_SESSION["login_data"]) ) {
+            return $_SESSION["login_data"];
+        } else {
+            return null;
+        }
+    }
 
     function mostraAlert($msg) {
         echo "

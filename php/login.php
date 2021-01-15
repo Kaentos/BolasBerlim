@@ -1,43 +1,51 @@
 <?php
+	include("bd.php");
+	include("funcoes.php");
+	
+	if(isset($_POST["user"]) and isset($_POST["password"])){
+		
+		$user = array(
+			"email" => $_POST["user"],
+			"password" => md5($_POST["password"])
+		);
+		
 
-if ( isset($_POST["user"]) && isset($_POST["password"]) ) {
-    include("bd.php");
-    include("funcoes.php");
+		if ( strpos($user["email"], "@abc.pt") ) {
+			$tabela = "Professor";
+			$tipo = TIPO_PROFESSOR;
+		} elseif ( strpos($user["email"], "@abccampus.pt") ) {
+			$tabela = "Aluno";
+			$tipo = TIPO_ALUNO;
+		} elseif ( strpos($user["email"], "@abcadmin.pt") ) {
+			$tabela = "Administrador";
+			$tipo = TIPO_PROFESSOR;
+		} else {
+			die("Pichota errada comparsa");
+		}
 
-    if (strpos($_POST["user"], "@abccampus.pt")) {
-        $query = "
-            SELECT *
-            FROM Aluno
-            WHERE email = :email AND password = MD5(:password);
-        ";
-        $nivel_acesso = 10;
-    } elseif (strpos($_POST["user"], "@abc.pt")) {
-        $query = "
-            SELECT *
-            FROM Professor
-            WHERE email = :email AND password = MD5(:password);
-        ";
-        $nivel_acesso = 5;
-    } elseif (strpos($_POST["user"], "@abcadmin.pt")) {
-        $query = "
-            SELECT *
-            FROM Aluno
-            WHERE email = :email AND password = MD5(:password);
-        ";
-        $nivel_acesso = 1
-    } else {
-        mostraAlert("Dados incorretos!");
-        gotoIndex();
-    }
-}
+		$query = "
+			SELECT *
+			FROM ".$tabela."
+			WHERE email = :email AND password = :password;
+		";
+		// prepara a query
+		$stmt = $dbo -> prepare($query);
+		$stmt -> execute($user);
 
-$user = $_GET["user"];
-$pwd = $_GET["password"];
-
-if ($user == "admin" && $pwd == "admin") {
-    header("refresh:0;url=../home.html");
-}else {
-    echo("Utilizador Errado!");
-    header("refresh:5;url=../login.html");
-}
+		if ($stmt -> rowCount() == 1) {
+			$user = $stmt -> fetch();
+			$_SESSION["login_data"] = array (
+				"idUser" => $user["id"],
+				"idTurma" => $user["idTurma"],
+				"tipo" => $tipo
+			);
+			header("location: ../home.html");
+			die();
+		} else {
+			exit("népias brother");
+		}
+		
+	}else{
+		exit('Preencha o utilizador e password');
+	}
 ?>
