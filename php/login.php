@@ -38,7 +38,7 @@
 				"idTurma" => $user["idTurma"],
 				"tipo" => $tipo
 			);
-			header("location: ../home.html");
+			gotoIndex();
 			exit();
 		} else {
 			mostraAlert("Dados incorretos!");
