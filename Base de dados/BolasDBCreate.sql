@@ -223,3 +223,18 @@ INSERT INTO Professor (nome, email, password) VALUES
     ('Isabel Muniz', 'isabelmuniz@abc.pt', MD5('isabelmuniz')), ('Lígia Varanda', 'ligiavaranda@abc.pt', MD5('ligiavaranda')),
     ('Benício Maranhão', 'beniciomaranhao@abc.pt', MD5('beniciomaranhao')), ('Alba Jesus', 'albajesus@abc.pt', MD5('albajesus')),
     ('Giulia Arouca', 'giuliaarouca@abc.pt', MD5('giuliaarouca')), ('Elizabeth Leitão', 'elizabethleitao@abc.pt', MD5('elizabethleitao'));
+
+INSERT INTO Aluno (nome, email, password, idTurma) VALUES
+    ('Angelo Maciel', 'angelomaciel@abccampus.pt', MD5('aluno'), 1), ('Anselmo Valadão', 'anselmovaladao@abccampus.pt', MD5('aluno'), 1),
+    ('Augusto Rego', 'augustorego@abccampus.pt', MD5('aluno'), 1), ('Nicollas Mota', 'nicollasmota@abccampus.pt', MD5('aluno'), 1),
+    ('Estrela Tristão', 'estrelatristao@abccampus.pt', MD5('aluno'), 1);
+
+INSERT INTO Aluno (nome, email, password, idTurma) VALUES
+    ('Fábia Regueira', 'fabiaregueira@abccampus.pt', MD5('aluno'), 2), ('Sofia Lacerda', 'sofialacerda@abccampus.pt', MD5('aluno'), 2),
+    ('Agostinho Rabelo', 'agostinhorabelo@abccampus.pt', MD5('aluno'), 2), ('Alexandro Proença', 'alexandroproenca@abccampus.pt', MD5('aluno'), 2),
+    ('Lúcio Caeiro', 'luciocaeiro@abccampus.pt', MD5('aluno'), 2);
+
+INSERT INTO Aluno (nome, email, password, idTurma) VALUES
+    ('Anastasia Mantas', 'anastasiamantas@abccampus.pt', MD5('aluno'), 3), ('Joelma Flávio', 'joelmaflavio@abccampus.pt', MD5('aluno'), 3),
+    ('Angela Landim', 'angelalandim@abccampus.pt', MD5('aluno'), 3), ('Joice Igrejas', 'joiceigrejas@abccampus.pt', MD5('aluno'), 3),
+    ('Kévim Garrido', 'kevimgarrido@abccampus.pt', MD5('aluno'), 3);
