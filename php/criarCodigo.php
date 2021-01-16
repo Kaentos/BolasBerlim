@@ -29,14 +29,20 @@
             $stmt -> bindValue("codigo", $info["codigo"]);
             $stmt -> execute();
             if ($stmt -> rowCount() > 0) {
-                die("codigo em uso");
+                mostraAlert("Código ".$info["codigo"]." já criado!");
+                gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
+                exit();
             }
         } else {
-            die("codigo nao valido");
+            mostraAlert("Código ".$info["codigo"]." inválido, precisa de ser 6 caracteres!");
+            gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
+            exit();
         }
 
         if ($info["minutos"] < 1 || $info["minutos"] > 30) {
-            die("minutos inválidos");
+            mostraAlert("Minutos ".$info["minutos"]." fora de limites!");
+            gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
+            exit();
         }
 
         $query = "
@@ -51,12 +57,12 @@
         $stmt = $dbo -> prepare($query);
         $stmt -> execute($info);
         if ($stmt -> rowCount() == 1) {
-            exit("sucesso");
+            mostraAlert("Código ".$info["codigo"]." criado com sucesso!");
+            gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
+            exit();
         } else {
-            exit("fail");
+            die("Erro critico, contacte um administrado!");
         }
-
-
     } else {
         gotoIndex();
     }

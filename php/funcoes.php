@@ -75,6 +75,14 @@
         }
     }
 
+    function gotoAulaProfessor($turma, $disciplina) {
+        echo "
+            <script type='text/javascript'>
+                window.location.href = '/Real-Learn/aulaProfessor.php?turma=".$turma."&disciplina=".$disciplina."';
+            </script>
+        ";
+    }
+
     function seNaoAdminVaiIndex() {
         if ($_SESSION["login_data"]["tipo"] != TIPO_ADMIN) {
             gotoIndex();
