@@ -17,7 +17,7 @@
             gotoFormGestao();
             die();
         }
-        if ( strlen($professor["email"]) <= 4 && strpos($professor["email"], "@abc.pt") == false ) {
+        if ( strlen($professor["email"]) <= 4 || strpos($professor["email"], "@abc.pt") == false ) {
             mostraAlert("Email de professor inválido!");
             gotoFormGestao();
             die();

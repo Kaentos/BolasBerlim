@@ -16,7 +16,7 @@
             gotoFormGestao();
             die();
         }
-        if ( strlen($aluno["email"]) <= 4 && strpos($aluno["email"], "@abccampus.pt") == false ) {
+        if ( strlen($aluno["email"]) <= 4 || strpos($aluno["email"], "@abccampus.pt") == false ) {
             mostraAlert("Email inválido!");
             gotoFormGestao();
             die();

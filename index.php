@@ -1,9 +1,24 @@
 <?php
     include("./php/funcoes.php");
-    if (getLoginData() == null) {
+    $loginData = getLoginData();
+    if ($loginData == null) {
         gotoLogin();
     }
     seAdminVaiDashboard();
+
+    include("./php/bd.php");
+    $query = "
+        SELECT d.id AS id, d.nome AS nome
+        FROM Turma AS t
+            INNER JOIN Curso AS c ON t.idCurso = c.id
+            INNER JOIN Curso_Disciplina AS cd ON c.id = cd.idCurso
+            INNER JOIN Disciplina AS d ON cd.idDisciplina = d.id
+        WHERE t.id = :id;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> bindValue("id", $loginData["idTurma"]);
+    $stmt -> execute();
+    $todasDisciplinas = $stmt -> fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +30,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hiddenContent.js"></script>
 
-    <title>Document</title>
+    <title>Página inicial</title>
 </head>
 <body>
     <?php
@@ -47,22 +62,15 @@
         </div>
         <div class="content">
             <div class="disciplinasContainer">
-                <div class="disciplina">
-                    <p>Disciplina1</p>
-                </div>
-                <div class="disciplina">
-                    <p>Disciplina2</p>
-                </div>
-                <div class="disciplina">
-                    <p>Disciplina3</p>
-                </div>
-                <div class="disciplina">
-                    <p>Disciplina4</p>
-                </div>
-                <div class="disciplina">
-                    <p>Disciplina5</p>
-                </div>
-                
+                <?php
+                    foreach($todasDisciplinas as $disciplina) {
+                        echo "
+                            <div class='disciplina'>
+                                <a href='aulaAluno.php?disciplina=".$disciplina["id"]."'>".$disciplina["nome"]."</a>
+                            </div>
+                        ";
+                    }
+                ?>
             </div>
             
             <div class="infoContainer">
