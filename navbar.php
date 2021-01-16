@@ -20,10 +20,10 @@
                             <a href='/Real-Learn/' class='navBarItem'>
                                 Homepage
                             </a>
-                            <a href='disciplinas.html' class='navBarItem'>
+                            <a href='/Real-Learn/disciplinas.php' class='navBarItem'>
                                 Disciplinas
                             </a>
-                            <a href='calendario.html' class='navBarItem'>
+                            <a href='/Real-Learn/calendario.html' class='navBarItem'>
                                 Calendario
                             </a>
                         ";

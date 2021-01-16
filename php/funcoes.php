@@ -4,6 +4,18 @@
     define("TIPO_ADMIN", "Administrador");
     define("TIPO_ALUNO", "Aluno");
     define("TIPO_PROFESSOR", "Professor");
+    define("TAMANHO_CODIGO", 6);
+
+    // https://stackoverflow.com/questions/4356289/php-random-string-generator
+    function generateRandomString($length) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 
     function getLoginData() {
         if ( isset($_SESSION["login_data"]) ) {
