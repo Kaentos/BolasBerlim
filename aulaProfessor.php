@@ -21,14 +21,14 @@
     $idDisciplina = $_GET["turma"];
     
     do {
-        $codigo = generateRandomString(TAMANHO_CODIGO);
+        $genCodigo = generateRandomString(TAMANHO_CODIGO);
         $query = "
             SELECT *
             FROM Codigo
             WHERE nome = :codigo
         ";
         $stmt = $dbo -> prepare($query);
-        $stmt -> bindValue("codigo", $codigo);
+        $stmt -> bindValue("codigo", $genCodigo);
         $stmt -> execute();
         if ($stmt -> rowCount() > 0) {
             continue;
@@ -51,10 +51,10 @@
         echo "não há codigos";
     } else {
         $todosCodigos = $stmt -> fetchAll();
-        $finalCodigos = array();
+        $infoTodosCodigos = array();
         foreach($todosCodigos as $codigo) {
             $query = "
-                SELECT a.nome AS nomeAluno, ca.data_presenca AS dataMarcacao
+                SELECT c.data_criacao AS dataCriacao, c.data_fim AS dataFim, a.nome AS nomeAluno, ca.data_presenca AS dataMarcacao
                 FROM Codigo AS c
                     INNER JOIN Codigo_Aluno AS ca ON c.id = ca.idCodigo
                     INNER JOIN Aluno AS a ON ca.idAluno = a.id
@@ -65,7 +65,7 @@
             $stmt -> bindValue("codigo", $codigo["nome"]);
             $stmt -> execute();
             if ($stmt -> rowCount() > 0) {
-                $finalCodigos[$codigo["nome"]] = $stmt -> fetchAll();
+                $infoTodosCodigos[$codigo["nome"]] = ["inicio" => $codigo["dataCriacao"], "fim" => $codigo["dataFim"], "alunos" => $stmt -> fetchAll()];
             }
         }
     }
@@ -150,7 +150,6 @@
                     </div>
 
                     <?php
-
                         if (isset($todosCodigos)) {
                             foreach($todosCodigos as $codigo) {
                                 echo "
@@ -172,7 +171,7 @@
                                         </div>
                                         <div class='dataColum'>
                                             <div class='dataOption'>
-                                                <div class='dataOptionRow'  onclick='verCodigo()'> 
+                                                <div class='dataOptionRow' onclick='verCodigo(\"".$codigo["nome"]."\")'> 
                                                     <img src='images/lista.png'> Alunos
                                                 </div>                  
                                                 <div class='dataOptionRow'> 
@@ -186,56 +185,68 @@
                                 ";
                             }
                         }
-
                     ?>
                 </div>
             </div>
         </div>
 
         <!-- Info solo código -->
-        <div class="hiddenDivs">
-            <div class="listaAlunosContainer" id="verCodigo">
-                <div class="tituloHidden">
-                    <h2>Codigo XXXX</h2>
-                    <img src="images/fechar.png" onclick="verCodigo()" />
-                </div>
-                <div class="hiddenContent">
-                    <div class="hiddenRowTable">
-                        <div class="dataColum">
-                            <p>Aluno</p>
+        <?php
+
+            if (isset($infoTodosCodigos) && count($infoTodosCodigos) > 0) {
+                foreach ($infoTodosCodigos as $key => $value) {
+                    echo "
+                        <div class='hiddenDivs'>
+                            <div class='listaAlunosContainer' id='verCodigo-".$key."'>
+                                <div class='tituloHidden'>
+                                    <h2>Codigo: $key</h2>
+                                    <h2>
+                                        ".$value["inicio"]."
+                                    </h2>
+                                    <h2>
+                                        ".$value["fim"]."
+                                    </h2>
+                                    <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
+                                </div>
+                                <div class='hiddenContent'>
+                                    <div class='hiddenRowTable'>
+                                        <div class='dataColum'>
+                                            <p>Aluno</p>
+                                        </div>
+                                        <div class='dataColum'>
+                                            <p>Data Inserção</p>
+                                        </div>
+                                    </div>
+                    ";
+                    foreach($value["alunos"] as $codigoAluno) {
+                        echo "
+                            <div class='hiddenRowTable'>
+                                <div class='dataColum'>
+                                    <p>
+                                        ".$codigoAluno["nomeAluno"]."
+                                    </p>
+                                </div>
+                                <div class='dataColum'>
+                                    <p>
+                                    ".$codigoAluno["dataMarcacao"]."
+                                    </p>
+                                </div>
+                            </div>
+                        ";
+                    }
+                    echo "
+                                    <br>
+                                </div>
+                            </div>
                         </div>
-                        <div class="dataColum">
-                            <p>Data Inserção</p>
-                        </div>
-                    </div>
-                    <div class="hiddenRowTable">
-                        <div class="dataColum">
-                            <p>Aluno1</p>
-                        </div>
-                        <div class="dataColum">
-                            <p>2020-01-01 18-18-00</p>
-                        </div>
-                    </div>
-                    <div class="hiddenRowTable">
-                        <div class="dataColum">
-                            <p>Alun2</p>
-                        </div>
-                        <div class="dataColum">
-                            <p>2020-01-01 18-18-00</p>
-                        </div>
-                    </div>
-                    <div class="hiddenRowTable">
-                        <div class="dataColum">
-                            <p>Aluno3</p>
-                        </div>
-                        <div class="dataColum">
-                            <p>2020-01-01 18-18-00</p>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </div>
+
+                    ";
+                }
+            }
+
+        ?>
+
+        
 
         <!-- Criar novo código -->
         <div class="hiddenDivs">
@@ -248,10 +259,9 @@
                     <form action="./php/criarCodigo.php" method="POST">
                         <input type="hidden" name="turma" value='<?php echo $idTurma ?>'>
                         <input type="hidden" name="disciplina" value='<?php echo $idDisciplina ?>'>
-                        
                         <div class="hiddenRow">
                             <label for="codigoNome">Codigo*</label>
-                            <input type="text" id="unico_codigo" name="codigo" value='<?php echo $codigo ?>' readonly>
+                            <input type="text" id="unico_codigo" name="codigo" value='<?php echo $genCodigo ?>' readonly>
                             <button type="button" onclick="copiarCodigo()">Copiar</button>
                         </div>
                         <div class="hiddenRow">
@@ -283,6 +293,31 @@
                         <input type="submit" value="Adicionar">
                     </form>
                 </div>
+            </div>
+        </div>
+
+        <div class="hiddenDivs">
+            <div class="listaAlunosContainer" id="novoItem">
+                <div class="tituloHidden">
+                    <h2>Novo item</h2>
+                    <img src="images/fechar.png" onclick="novoItem()" />
+                </div>
+
+                <div class="hiddenContent">
+                <form action="" method="POST">
+                    <div class="hiddenRow">
+                        <label for="codigoNome">Titulo/Nome*</label>
+                        <input type="text" name="codigoNome" id="">
+                    </div>
+                    <div class="hiddenRow">
+                        <label for="file">Ficheiro</label>
+                        <input type="file" name="file" id="">
+                    </div>
+                    <input type="checkbox" name="visivel" id="">Começar Visivel?
+                    <br>
+                    <br>
+                    <input type="submit" value="Adicionar">
+                </form>
             </div>
         </div>
 
@@ -360,11 +395,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inserirFicheiro">
+                    <div class="inserirFicheiro" onclick="novoItem()">
                         Novo Item
-                        <a href="">
-                            <img src="images/plus.png" alt="" class="plusIcon"/>
-                        </a>
+                        <img src="images/plus.png" alt="" class="plusIcon"/>
                     </div>
                 </div>
                 <div class="aulaContent">
