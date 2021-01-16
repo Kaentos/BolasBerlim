@@ -37,6 +37,14 @@
         ";
     }
 
+    function gotoLogout() {
+        echo "
+            <script type='text/javascript'>
+                window.location.href = '/Real-Learn/php/logout.php';
+            </script>
+        ";
+    }
+
     function gotoIndex() {
         echo "
             <script type='text/javascript'>

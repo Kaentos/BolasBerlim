@@ -224,6 +224,10 @@ INSERT INTO Professor (nome, email, password) VALUES
     ('Benício Maranhão', 'beniciomaranhao@abc.pt', MD5('beniciomaranhao')), ('Alba Jesus', 'albajesus@abc.pt', MD5('albajesus')),
     ('Giulia Arouca', 'giuliaarouca@abc.pt', MD5('giuliaarouca')), ('Elizabeth Leitão', 'elizabethleitao@abc.pt', MD5('elizabethleitao'));
 
+INSERT INTO Disciplina_Professor (idDisciplina, idProfessor) VALUES
+    (1, 16), (2, 15), (3, 14), (4, 13), (5, 12), (6, 11), (7, 10), (8, 9), (9, 8), (10, 7), (11, 6), (12, 5), (13, 4), (14, 3),
+    (2, 2), (4, 1), (6, 1), (8, 2), (10, 3), (12, 4);
+
 INSERT INTO Aluno (nome, email, password, idTurma) VALUES
     ('Angelo Maciel', 'angelomaciel@abccampus.pt', MD5('aluno'), 1), ('Anselmo Valadão', 'anselmovaladao@abccampus.pt', MD5('aluno'), 1),
     ('Augusto Rego', 'augustorego@abccampus.pt', MD5('aluno'), 1), ('Nicollas Mota', 'nicollasmota@abccampus.pt', MD5('aluno'), 1),

@@ -7,18 +7,40 @@
     seAdminVaiDashboard();
 
     include("./php/bd.php");
-    $query = "
-        SELECT d.id AS id, d.nome AS nome
-        FROM Turma AS t
-            INNER JOIN Curso AS c ON t.idCurso = c.id
-            INNER JOIN Curso_Disciplina AS cd ON c.id = cd.idCurso
-            INNER JOIN Disciplina AS d ON cd.idDisciplina = d.id
-        WHERE t.id = :id;
-    ";
-    $stmt = $dbo -> prepare($query);
-    $stmt -> bindValue("id", $loginData["idTurma"]);
+    if (strcmp($loginData["tipo"], TIPO_ALUNO) == 0) {
+        $query = "
+            SELECT d.id AS id, d.nome AS nome
+            FROM Turma AS t
+                INNER JOIN Curso AS c ON t.idCurso = c.id
+                INNER JOIN Curso_Disciplina AS cd ON c.id = cd.idCurso
+                INNER JOIN Disciplina AS d ON cd.idDisciplina = d.id
+            WHERE t.id = :id
+            ORDER BY d.nome;
+        ";
+        $stmt = $dbo -> prepare($query);
+        $stmt -> bindValue("id", $loginData["idTurma"]);
+    } elseif (strcmp($loginData["tipo"], TIPO_PROFESSOR) == 0) {
+        $eProfessor = true;
+        $query = "
+            SELECT al.nome AS anoLetivo, c.nome AS curso, t.id AS idTurma, d.id AS id, d.nome AS nome
+            FROM Turma AS t
+                INNER JOIN AnoLetivo AS al ON t.idAnoLetivo = al.id
+                INNER JOIN Curso AS c ON t.idCurso = c.id
+                INNER JOIN Curso_Disciplina AS cd ON c.id = cd.idCurso
+                INNER JOIN Disciplina AS d ON cd.idDisciplina = d.id
+                INNER JOIN Disciplina_Professor AS dp ON d.id = dp.idDisciplina
+                INNER JOIN Professor AS p ON dp.idProfessor = p.id
+            WHERE p.id = :id
+            ORDER BY c.nome, d.nome;
+        ";
+        $stmt = $dbo -> prepare($query);
+        $stmt -> bindValue("id", $loginData["idUser"]);
+    }
     $stmt -> execute();
     $todasDisciplinas = $stmt -> fetchAll();
+    if (count($todasDisciplinas) == 0) {
+        die("Erro critico. Por favor contacte um administrador.");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +85,38 @@
         <div class="content">
             <div class="disciplinasContainer">
                 <?php
-                    foreach($todasDisciplinas as $disciplina) {
-                        echo "
-                            <div class='disciplina'>
-                                <a href='aulaAluno.php?disciplina=".$disciplina["id"]."'>".$disciplina["nome"]."</a>
-                            </div>
-                        ";
+                    if ( isset($todasDisciplinas) ) {
+                        $i = 0;
+                        define("MAX", 5);
+                        if ( isset($eProfessor) && $eProfessor ) {
+                            foreach($todasDisciplinas as $disciplina) {
+                                echo "
+                                    <div class='disciplina'>
+                                        <a href='aulaProfessor.php?disciplina=".$disciplina["id"]."'>
+                                            ".$disciplina["curso"]." (".$disciplina["anoLetivo"].") - ".$disciplina["nome"]."
+                                            </a>
+                                    </div>
+                                ";
+                                $i = $i + 1;
+                                if ($i == MAX) {
+                                    break;
+                                }
+                            }
+                        } else {
+                            foreach($todasDisciplinas as $disciplina) {
+                                echo "
+                                    <div class='disciplina'>
+                                        <a href='aulaAluno.php?disciplina=".$disciplina["id"]."'>
+                                            ".$disciplina["nome"]."
+                                        </a>
+                                    </div>
+                                ";
+                                $i = $i + 1;
+                                if ($i == MAX) {
+                                    break;
+                                }
+                            }
+                        }
                     }
                 ?>
             </div>

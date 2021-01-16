@@ -17,7 +17,7 @@
                         ";
                     } else {
                         echo "
-                            <a href='home.html' class='navBarItem'>
+                            <a href='/Real-Learn/' class='navBarItem'>
                                 Homepage
                             </a>
                             <a href='disciplinas.html' class='navBarItem'>

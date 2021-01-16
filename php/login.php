@@ -33,11 +33,18 @@
 
 		if ($stmt -> rowCount() == 1) {
 			$user = $stmt -> fetch();
-			$_SESSION["login_data"] = array (
-				"idUser" => $user["id"],
-				"idTurma" => $user["idTurma"],
-				"tipo" => $tipo
-			);
+			if (isset($user["idTurma"])) {
+				$_SESSION["login_data"] = array (
+					"idUser" => $user["id"],
+					"idTurma" => $user["idTurma"],
+					"tipo" => $tipo
+				);
+			} else {
+				$_SESSION["login_data"] = array (
+					"idUser" => $user["id"],
+					"tipo" => $tipo
+				);
+			}
 			gotoIndex();
 			exit();
 		} else {
