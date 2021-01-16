@@ -13,11 +13,11 @@
     if ( isset($_POST["codigo"]) && isset($_POST["minutos"]) && isset($_POST["turma"]) && isset($_POST["disciplina"]) ) {
         $info = array(
             "codigo" => $_POST["codigo"],
-            "minutos" => $_POST["minutos"],
             "idTurma" => $_POST["turma"],
             "idDisciplina" => $_POST["disciplina"],
             "idProfessor" => $loginData["idUser"]
         );
+        $minutos = $_POST["minutos"];
         include("bd.php");
         if (strlen($info["codigo"]) == TAMANHO_CODIGO) {
             $query = "
@@ -39,8 +39,8 @@
             exit();
         }
 
-        if ($info["minutos"] < 1 || $info["minutos"] > 30) {
-            mostraAlert("Minutos ".$info["minutos"]." fora de limites!");
+        if ($minutos < 1 || $minutos > 30) {
+            mostraAlert("Minutos ".$minutos." fora de limites!");
             gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
             exit();
         }
@@ -50,14 +50,13 @@
             VALUES (:codigo, :dataCriacao, :dataFim, :idProfessor, :idDisciplina, :idTurma);
         ";
         $dataAtual = date('Y-m-d H:i:s');
-        $dataFim = date('Y-m-d H:i:s', strtotime("+".$info["minutos"]." minutes", strtotime($dataAtual)));
+        $dataFim = date('Y-m-d H:i:s', strtotime("+".$minutos." minutes", strtotime($dataAtual)));
         $info["dataCriacao"] = $dataAtual;
         $info["dataFim"] = $dataFim;
-        unset($info["minutos"]);
         $stmt = $dbo -> prepare($query);
         $stmt -> execute($info);
         if ($stmt -> rowCount() == 1) {
-            mostraAlert("Código ".$info["codigo"]." criado com sucesso!");
+            mostraAlert("Código ".$info["codigo"]." criado com sucesso! Expira em $minutos minutos.");
             gotoAulaProfessor($info["idTurma"], $info["idDisciplina"]);
             exit();
         } else {
