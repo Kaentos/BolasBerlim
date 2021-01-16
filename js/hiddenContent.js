@@ -46,3 +46,53 @@ function profileMenuFun() {
         content.style.display = "none";
     }
   }
+
+  function listaTodosCodigos() {
+
+    var content = document.getElementById("listaCodigos");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
+
+  function criarCodigo() {
+
+    var content = document.getElementById("criarCodigo");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
+
+  function verCodigo() {
+
+    var content = document.getElementById("verCodigo");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
+
+  function criarNotificacao() {
+
+    var content = document.getElementById("criarNotificacao");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }
+
+  function novoItem() {
+
+    var content = document.getElementById("novoItem");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+  }

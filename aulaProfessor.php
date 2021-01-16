@@ -3,12 +3,19 @@
     $loginData = getLoginData();
     if ($loginData == null) {
         gotoLogin();
+        exit();
     }
     seAdminVaiDashboard();
+
+    if (strcmp($loginData["tipo"], TIPO_PROFESSOR) != 0) {
+        gotoIndex();
+        exit();
+    }
 
     include("./php/bd.php");
     if ( !isset($_GET["turma"]) || !isset($_GET["disciplina"]) ) {
         gotoIndex();
+        exit();
     }
     $idTurma = $_GET["turma"];
     $idDisciplina = $_GET["turma"];
@@ -29,6 +36,39 @@
             break;
         }
     } while (true);
+
+    $query = "
+        SELECT c.id, c.nome, c.data_criacao AS dataCriacao, c.data_fim AS dataFim
+        FROM Codigo AS c
+        WHERE idTurma = :idTurma AND idDisciplina = :idDisciplina
+        ORDER BY dataFim DESC;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> bindValue("idTurma", $idTurma);
+    $stmt -> bindValue("idDisciplina", $idDisciplina);
+    $stmt -> execute();
+    if ($stmt -> rowCount() == 0) {
+        echo "não há codigos";
+    } else {
+        $todosCodigos = $stmt -> fetchAll();
+        $finalCodigos = array();
+        foreach($todosCodigos as $codigo) {
+            $query = "
+                SELECT a.nome AS nomeAluno, ca.data_presenca AS dataMarcacao
+                FROM Codigo AS c
+                    INNER JOIN Codigo_Aluno AS ca ON c.id = ca.idCodigo
+                    INNER JOIN Aluno AS a ON ca.idAluno = a.id
+                WHERE c.nome = :codigo
+                ORDER BY a.nome;
+            ";
+            $stmt = $dbo -> prepare($query);
+            $stmt -> bindValue("codigo", $codigo["nome"]);
+            $stmt -> execute();
+            if ($stmt -> rowCount() > 0) {
+                $finalCodigos[$codigo["nome"]] = $stmt -> fetchAll();
+            }
+        }
+    }
 
 ?>
 
@@ -85,6 +125,167 @@
                 </div>
             </div>
         </div>
+
+        <!-- Lista códigos -->
+        <div class="hiddenDivs">
+            <div class="listaAlunosContainer" id="listaCodigos">
+                <div class="tituloHidden">
+                    <h2>Todos os Codigos</h2>
+                    <img src="images/fechar.png" onclick="listaTodosCodigos()" />
+                </div>
+                <div class="hiddenContent">
+                    <div class="hiddenRowTable">
+                        <div class="dataColum">
+                            <p>Código</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>Data Inicio</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>Data Fim</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>Ações</p>
+                        </div>
+                    </div>
+
+                    <?php
+
+                        if (isset($todosCodigos)) {
+                            foreach($todosCodigos as $codigo) {
+                                echo "
+                                    <div class='hiddenRowTable'>
+                                        <div class='dataColum'>
+                                            <p>
+                                                ".$codigo["nome"]."
+                                            </p>
+                                        </div>
+                                        <div class='dataColum'>
+                                            <p>
+                                                ".$codigo["dataCriacao"]."
+                                            </p>
+                                        </div>
+                                        <div class='dataColum'>
+                                            <p>
+                                                ".$codigo["dataFim"]."
+                                            </p>
+                                        </div>
+                                        <div class='dataColum'>
+                                            <div class='dataOption'>
+                                                <div class='dataOptionRow'  onclick='verCodigo()'> 
+                                                    <img src='images/lista.png'> Alunos
+                                                </div>                  
+                                                <div class='dataOptionRow'> 
+                                                    <a href='./php/eliminar_codigo.php?id=".$codigo["id"]."&turma=$idTurma&disciplina=$idDisciplina'>
+                                                        <img src='images/trash.svg'> Remover
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ";
+                            }
+                        }
+
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info solo código -->
+        <div class="hiddenDivs">
+            <div class="listaAlunosContainer" id="verCodigo">
+                <div class="tituloHidden">
+                    <h2>Codigo XXXX</h2>
+                    <img src="images/fechar.png" onclick="verCodigo()" />
+                </div>
+                <div class="hiddenContent">
+                    <div class="hiddenRowTable">
+                        <div class="dataColum">
+                            <p>Aluno</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>Data Inserção</p>
+                        </div>
+                    </div>
+                    <div class="hiddenRowTable">
+                        <div class="dataColum">
+                            <p>Aluno1</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>2020-01-01 18-18-00</p>
+                        </div>
+                    </div>
+                    <div class="hiddenRowTable">
+                        <div class="dataColum">
+                            <p>Alun2</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>2020-01-01 18-18-00</p>
+                        </div>
+                    </div>
+                    <div class="hiddenRowTable">
+                        <div class="dataColum">
+                            <p>Aluno3</p>
+                        </div>
+                        <div class="dataColum">
+                            <p>2020-01-01 18-18-00</p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Criar novo código -->
+        <div class="hiddenDivs">
+            <div class="listaAlunosContainer" id="criarCodigo">
+                <div class="tituloHidden">
+                    <h2>Criar Novo Codigo</h2>
+                    <img src="images/fechar.png" onclick="criarCodigo()" />
+                </div>
+                <div class="hiddenContent">
+                    <form action="./php/criarCodigo.php" method="POST">
+                        <input type="hidden" name="turma" value='<?php echo $idTurma ?>'>
+                        <input type="hidden" name="disciplina" value='<?php echo $idDisciplina ?>'>
+                        
+                        <div class="hiddenRow">
+                            <label for="codigoNome">Codigo*</label>
+                            <input type="text" id="unico_codigo" name="codigo" value='<?php echo $codigo ?>' readonly>
+                            <button type="button" onclick="copiarCodigo()">Copiar</button>
+                        </div>
+                        <div class="hiddenRow">
+                            <label for="codigoNome">Limite em minutos*</label>
+                            <input type="number" name="minutos" min="1" max="30" value="5" required>
+                            1 a 30 minutos
+                        </div>
+                        <br>
+                        <input type="submit" value="Adicionar">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Criar notificação -->
+        <div class="hiddenDivs">
+            <div class="listaAlunosContainer" id="criarNotificacao">
+                <div class="tituloHidden">
+                    <h2>Criar Notificação</h2>
+                    <img src="images/fechar.png" onclick="criarNotificacao()" />
+                </div>
+                <div class="hiddenContent">
+                    <form action="" method="POST">
+                        <div class="hiddenRow">
+                            <label for="codigoNome">Texto*</label>
+                            <input type="text" name="codigoNome" id="">
+                        </div>
+                        <br>
+                        <input type="submit" value="Adicionar">
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="listaFicheirosContainer" id="listaFicheirosContainer">
             <div class="tituloWindow">
                 <div class="descricaoWindow">
@@ -130,24 +331,13 @@
                 <button class="titlebtn" onclick="listaAlunosMenu()">Alunos</button>
             </div>
             <div class="titulobotoes">
-                <a href="#.html" class="titlebtn">Todos os codigos</a>
-                <a href="#.html" class="titlebtn">Criar código</a>
-                <a href="#.html" class="titlebtn">Criar notificação</a>
+                <button class="titlebtn" onclick="listaTodosCodigos()">Todos Codigos</button>
+                <button class="titlebtn" onclick="criarCodigo()">Criar Codigo</button>
+                <button class="titlebtn" onclick="criarNotificacao()">Criar Notificação</button>
             </div>
         </div>
         <div class="listaAulas">
             lista inicio
-            <form action="./php/criarCodigo.php" method="POST">
-                Criar codigo
-                <input type="hidden" name="turma" value='<?php echo $idTurma ?>'>
-                <input type="hidden" name="disciplina" value='<?php echo $idDisciplina ?>'>
-                <input type="text" id="unico_codigo" name="codigo" value='<?php echo $codigo ?>' readonly>
-                <button type="button" onclick="copiarCodigo()">Copiar</button>
-                Limite em minutos<sup>*</sup>
-                <input type="number" name="minutos" min="1" max="30" value="5" required>
-                Minimo 1 | Máximo 30 minutos
-                <input type="submit" value="criar">
-            </form>
             <div class="aulaContainer">
                 <div class="aulaHeader">
                     <div class="aulaTitulo">

@@ -92,7 +92,7 @@
                             foreach($todasDisciplinas as $disciplina) {
                                 echo "
                                     <div class='disciplina'>
-                                        <a href='aulaProfessor.php?disciplina=".$disciplina["id"]."'>
+                                        <a href='aulaProfessor.php?turma=".$disciplina["idTurma"]."&disciplina=".$disciplina["id"]."'>
                                             ".$disciplina["curso"]." (".$disciplina["anoLetivo"].") - ".$disciplina["nome"]."
                                             </a>
                                     </div>

@@ -1,10 +1,12 @@
 <?php
     include("funcoes.php");
+    include("funcoes.php");
     $loginData = getLoginData();
     if ($loginData == null) {
         gotoLogin();
         exit();
     }
+    seAdminVaiDashboard();
     if (strcmp($loginData["tipo"], TIPO_PROFESSOR) != 0) {
         gotoIndex();
         exit();

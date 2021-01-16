@@ -9,8 +9,10 @@
 .aulaFicheiros {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1%;
 }
 
 .aulaSubmicoes {
@@ -23,6 +25,8 @@
 
 .aulaFile {
     display: flex;
+    width: 25%;
+    margin-bottom: 1%;
 }
 
 .aulasubmicao {
@@ -110,7 +114,7 @@
     padding: 2%;
     text-align: center;
     color: black;
-    width: 100px;
+    width: 130px;
     border: none;
     margin-left: 5%;
 }
@@ -155,7 +159,7 @@
     position: absolute;
     padding: 2%;
     left: 37.5%;
-    top: 20%;
+    top: 25%;
     z-index: 1;
 }
 
@@ -165,6 +169,15 @@
     justify-content: space-between;
     font-size: 24px;
 }
+
+.tituloHidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+
+}
+
 
 .listaAlunos {
     display: flex;
@@ -220,12 +233,12 @@
 .descricaoWindow {
     width: 85%;
     text-align: center;
+    margin-left: 15%;
 }
 
 .exitWindow {
     width: 15%;
     margin: auto;
-    margin-right: -6%;
     margin-left: 6%;
 }
 
@@ -268,3 +281,83 @@
     border: 1px solid black;
 }
 
+.hiddenContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
+    text-align: center;
+    
+}
+.hiddenRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 4%;
+}
+.hiddenRowTable{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*margin-bottom: 4%;*/
+}
+.hiddenRow input[type="file"] {
+    margin-left: 15%;
+
+}
+.hiddenRow input[type="text"] {
+    margin-left: 6%;
+    padding: 6px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.hiddenRow input[type="number"] {
+    margin-left: 5%;
+    padding: 6px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.hiddenContent input[type=submit] {
+    width: 30%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.tituloHidden img{
+    width: 13%;
+}
+
+.dataColum {
+    border: 1px black solid;
+    text-align: center;
+    width: 32.6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dataOption{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5% 0%;
+}
+.dataOptionRow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3% 0%;
+    padding: 0% 10%;
+}
+.dataOptionRow img{
+    width: 20%;
+}
