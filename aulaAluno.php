@@ -73,7 +73,7 @@
         <div class="listaAulas">
             lista inicio
             <div>
-                <form action="./php/" method="POST">
+                <form action="./php/aluno_marcaCodigo.php" method="POST">
                     Codigo*:
                     <input type="text" name="codigo">
                     <input type="hidden" name="idDisciplina" value="<?php echo $idDisciplina  ?>">
