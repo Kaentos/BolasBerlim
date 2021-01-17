@@ -19,6 +19,17 @@
     }
     $idTurma = $_GET["turma"];
     $idDisciplina = $_GET["turma"];
+
+    $query = "
+        SELECT id, nome
+        FROM Aluno
+        WHERE idTurma = :idTurma
+        ORDER BY nome;
+    ";
+    $stmt = $dbo -> prepare($query);
+    $stmt -> bindValue("idTurma", $idTurma);
+    $stmt -> execute();
+    $todosAlunos = $stmt -> fetchAll();
     
     do {
         $genCodigo = generateRandomString(TAMANHO_CODIGO);
@@ -101,24 +112,26 @@
                     <img src="images/fechar.png" onclick="listaAlunosMenu()" />
                 </div>
             </div>
-
             <div class="listaAlunos">
                 <div class="descricaoLista">
-                    <p>Nome:</p>
-                    <p>Número:</p>
+                    <p>Número de aluno:</p>
+                    <p>Nome do aluno:</p>
                 </div>
-                <div class="listaAlunoRow">
-                    <p>Carlos</p>
-                    <p>19212323</p>
-                </div>
-                <div class="listaAlunoRow">
-                    <p>Raquel</p>
-                    <p>19212323</p>
-                </div>
-                <div class="listaAlunoRow">
-                    <p>Maria</p>
-                    <p>19212323</p>
-                </div>
+                <?php
+                    if (count($todosAlunos) == 0) {
+                        echo "<h2>Esta turma ainda não tem alunos atribuídos</h2>";
+                    } else {
+                        foreach($todosAlunos as $aluno) {
+                            echo "
+                                <div class='listaAlunoRow'>
+                                    <p>".$aluno["id"]."</p>
+                                    <p>".$aluno["nome"]."</p>
+                                </div>
+                            ";
+                        }
+                        unset($aluno);
+                    }
+                ?>
             </div>
         </div>
 
