@@ -44,6 +44,24 @@
             gotoIndex();
             exit();
         }
+
+        $query = "
+            SELECT p.id, p.nome
+            FROM Turma AS t
+                INNER JOIN AnoLetivo AS al ON t.idAnoLetivo = al.id
+                INNER JOIN Curso AS c ON t.idCurso = c.id
+                INNER JOIN Curso_Disciplina AS cd ON c.id = cd.idCurso
+                INNER JOIN Disciplina AS d ON cd.idDisciplina = d.id
+                INNER JOIN Disciplina_Professor as dp ON d.id = dp.idDisciplina
+                INNER JOIN Professor AS p ON dp.idProfessor = p.id
+            WHERE t.id = :idTurma AND d.id = :idDisciplina
+            ORDER BY p.nome;
+        ";
+        $stmt = $dbo -> prepare($query);
+        $stmt -> bindValue("idTurma", $loginData["idTurma"]);
+        $stmt -> bindValue("idDisciplina", $idDisciplina);
+        $stmt -> execute();
+        $todosProfessores = $stmt -> fetchAll();
     }
 ?>
 
@@ -79,6 +97,16 @@
                     <input type="hidden" name="idDisciplina" value="<?php echo $idDisciplina  ?>">
                     <input type="submit" value="Confirmar presença">
                 </form>
+                Professor(es):
+                <?php
+                    foreach($todosProfessores as $prof) {
+                        echo "
+                            <a href='/Real-Learn/profile.php?id=".$prof["id"]."&tipo=".TIPO_PROFESSOR."'>
+                                ".$prof["nome"]."
+                            </a><br>
+                        ";
+                    }
+                ?>
             </div>
             <div class="aulaContainer">
                 <div class="aulaTitulo">
