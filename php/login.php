@@ -33,6 +33,21 @@
 
 		if ($stmt -> rowCount() == 1) {
 			$user = $stmt -> fetch();
+			$dataAgora = date("Y-m-d H:i:s");
+			$query = "
+				UPDATE $tabela
+				SET ultimo_login = :agora
+				WHERE id = :idUser
+			";
+			$stmt = $dbo -> prepare($query);
+			$stmt -> bindValue("agora", $dataAgora);
+			$stmt -> bindValue("idUser", $user["id"]);
+			$stmt -> execute();
+			if ($stmt -> rowCount() != 1) {
+				session_destroy();
+				die("Erro critico por favor contacte um administrador!");
+			}
+
 			if (isset($user["idTurma"])) {
 				$_SESSION["login_data"] = array (
 					"idUser" => $user["id"],

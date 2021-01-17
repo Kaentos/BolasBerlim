@@ -140,6 +140,7 @@
                 <div class="descricaoLista">
                     <p>Número de aluno:</p>
                     <p>Nome do aluno:</p>
+                    <p>Ações:</p>
                 </div>
                 <?php
                     if (count($todosAlunos) == 0) {
@@ -150,6 +151,11 @@
                                 <div class='listaAlunoRow'>
                                     <p>".$aluno["id"]."</p>
                                     <p>".$aluno["nome"]."</p>
+                                    <p>
+                                        <a href='/Real-Learn/profile.php?id=".$aluno["id"]."&tipo=".TIPO_ALUNO."'>
+                                            ver perfil
+                                        </a>    
+                                    </p>
                                 </div>
                             ";
                         }

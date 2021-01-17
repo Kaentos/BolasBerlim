@@ -63,7 +63,7 @@
                             <img class='profileImg' src='images/user.png'>
                         </a>
                         <div id='profileMenu' class='profileMenus'>
-                            <a href='#'>Perfil</a>
+                            <a href='./profile.php'>Perfil</a>
                             <a href='#'>Definições</a>
                             <a href='./php/logout.php'>logout</a>
                         </div>
