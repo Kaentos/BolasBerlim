@@ -31,7 +31,7 @@
                 INNER JOIN Disciplina_Professor AS dp ON d.id = dp.idDisciplina
                 INNER JOIN Professor AS p ON dp.idProfessor = p.id
             WHERE p.id = :id
-            ORDER BY c.nome, d.nome;
+            ORDER BY al.nome, c.nome, d.nome;
         ";
         $stmt = $dbo -> prepare($query);
         $stmt -> bindValue("id", $loginData["idUser"]);
