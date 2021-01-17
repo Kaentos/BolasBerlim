@@ -83,6 +83,14 @@
         ";
     }
 
+    function gotoAulaAluno($disciplina) {
+        echo "
+            <script type='text/javascript'>
+                window.location.href = '/Real-Learn/aulaAluno.php?disciplina=".$disciplina."';
+            </script>
+        ";
+    }
+
     function seNaoAdminVaiIndex() {
         if ($_SESSION["login_data"]["tipo"] != TIPO_ADMIN) {
             gotoIndex();
