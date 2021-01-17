@@ -192,7 +192,6 @@
 
         <!-- Info solo código -->
         <?php
-
             if (isset($infoTodosCodigos) && count($infoTodosCodigos) > 0) {
                 foreach ($infoTodosCodigos as $key => $value) {
                     echo "
@@ -200,14 +199,11 @@
                             <div class='listaAlunosContainer' id='verCodigo-".$key."'>
                                 <div class='tituloHidden'>
                                     <h2>Codigo: $key</h2>
-                                    <h2>
-                                        ".$value["inicio"]."
-                                    </h2>
-                                    <h2>
-                                        ".$value["fim"]."
-                                    </h2>
                                     <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
                                 </div>
+                                <h3>
+                                    ".date("d-m-Y H:i:s", strtotime($value["inicio"]))." a ".date("d-m-Y H:i:s", strtotime($value["fim"]))."
+                                </h3>
                                 <div class='hiddenContent'>
                                     <div class='hiddenRowTable'>
                                         <div class='dataColum'>
@@ -245,8 +241,6 @@
             }
 
         ?>
-
-        
 
         <!-- Criar novo código -->
         <div class="hiddenDivs">
