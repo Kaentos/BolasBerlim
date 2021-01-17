@@ -47,9 +47,7 @@
     $stmt -> bindValue("idTurma", $idTurma);
     $stmt -> bindValue("idDisciplina", $idDisciplina);
     $stmt -> execute();
-    if ($stmt -> rowCount() == 0) {
-        echo "não há codigos";
-    } else {
+    if ($stmt -> rowCount() > 0) {
         $todosCodigos = $stmt -> fetchAll();
         $infoTodosCodigos = array();
         foreach($todosCodigos as $codigo) {
@@ -182,6 +180,14 @@
                                     </div>
                                 ";
                             }
+                        } else {
+                            echo "
+                                <div class='hiddenRowTable'>
+                                    <h2>
+                                        Ainda não criou códigos
+                                    </h2>
+                                </div>
+                            ";
                         }
                     ?>
                 </div>
@@ -192,6 +198,22 @@
         <?php
             if (isset($infoTodosCodigos)) {
                 foreach ($infoTodosCodigos as $key => $value) {
+                    if (count($value["alunos"]) == 0) {
+                        echo "
+                            <div class='hiddenDivs'>
+                                <div class='listaAlunosContainer' id='verCodigo-".$key."'>
+                                    <div class='tituloHidden'>
+                                        <h2>Código: $key</h2>
+                                        <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
+                                    </div>
+                                    <h3>
+                                        Nenhum aluno registou o código!
+                                    </h3>
+                                </div>
+                            </div>
+                        ";
+                        break;
+                    }
                     echo "
                         <div class='hiddenDivs'>
                             <div class='listaAlunosContainer' id='verCodigo-".$key."'>
@@ -245,7 +267,6 @@
                     ";
                 }
             }
-
         ?>
 
         <!-- Criar novo código -->

@@ -1,6 +1,5 @@
 <?php
     include("funcoes.php");
-    include("funcoes.php");
     $loginData = getLoginData();
     if ($loginData == null) {
         gotoLogin();
