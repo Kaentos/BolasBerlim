@@ -54,7 +54,7 @@
         $infoTodosCodigos = array();
         foreach($todosCodigos as $codigo) {
             $query = "
-                SELECT c.data_criacao AS dataCriacao, c.data_fim AS dataFim, a.nome AS nomeAluno, ca.data_presenca AS dataMarcacao
+                SELECT c.data_criacao AS dataCriacao, c.data_fim AS dataFim, a.nome AS nomeAluno, a.id AS idAluno, ca.data_presenca AS dataMarcacao
                 FROM Codigo AS c
                     INNER JOIN Codigo_Aluno AS ca ON c.id = ca.idCodigo
                     INNER JOIN Aluno AS a ON ca.idAluno = a.id
@@ -64,9 +64,7 @@
             $stmt = $dbo -> prepare($query);
             $stmt -> bindValue("codigo", $codigo["nome"]);
             $stmt -> execute();
-            if ($stmt -> rowCount() > 0) {
-                $infoTodosCodigos[$codigo["nome"]] = ["inicio" => $codigo["dataCriacao"], "fim" => $codigo["dataFim"], "alunos" => $stmt -> fetchAll()];
-            }
+            $infoTodosCodigos[$codigo["nome"]] = ["inicio" => $codigo["dataCriacao"], "fim" => $codigo["dataFim"], "alunos" => $stmt -> fetchAll()];
         }
     }
 
@@ -161,12 +159,12 @@
                                         </div>
                                         <div class='dataColum'>
                                             <p>
-                                                ".$codigo["dataCriacao"]."
+                                                ".date("H:i:s d-m-Y", strtotime($codigo["dataCriacao"]))."
                                             </p>
                                         </div>
                                         <div class='dataColum'>
                                             <p>
-                                                ".$codigo["dataFim"]."
+                                                ".date("H:i:s d-m-Y", strtotime($codigo["dataFim"]))."
                                             </p>
                                         </div>
                                         <div class='dataColum'>
@@ -192,25 +190,28 @@
 
         <!-- Info solo código -->
         <?php
-            if (isset($infoTodosCodigos) && count($infoTodosCodigos) > 0) {
+            if (isset($infoTodosCodigos)) {
                 foreach ($infoTodosCodigos as $key => $value) {
                     echo "
                         <div class='hiddenDivs'>
                             <div class='listaAlunosContainer' id='verCodigo-".$key."'>
                                 <div class='tituloHidden'>
-                                    <h2>Codigo: $key</h2>
+                                    <h2>Código: $key</h2>
                                     <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
                                 </div>
                                 <h3>
-                                    ".date("d-m-Y H:i:s", strtotime($value["inicio"]))." a ".date("d-m-Y H:i:s", strtotime($value["fim"]))."
+                                    ".date("H:i:s d-m-Y", strtotime($value["inicio"]))." a ".date("H:i:s d-m-Y", strtotime($value["fim"]))."
                                 </h3>
                                 <div class='hiddenContent'>
                                     <div class='hiddenRowTable'>
                                         <div class='dataColum'>
-                                            <p>Aluno</p>
+                                            <p>Número de aluno</p>
                                         </div>
                                         <div class='dataColum'>
-                                            <p>Data Inserção</p>
+                                            <p>Nome do aluno</p>
+                                        </div>
+                                        <div class='dataColum'>
+                                            <p>Data marcação</p>
                                         </div>
                                     </div>
                     ";
@@ -219,12 +220,17 @@
                             <div class='hiddenRowTable'>
                                 <div class='dataColum'>
                                     <p>
+                                        ".$codigoAluno["idAluno"]."
+                                    </p>
+                                </div>
+                                <div class='dataColum'>
+                                    <p>
                                         ".$codigoAluno["nomeAluno"]."
                                     </p>
                                 </div>
                                 <div class='dataColum'>
                                     <p>
-                                    ".$codigoAluno["dataMarcacao"]."
+                                    ".date("H:i:s d-m-Y", strtotime($codigoAluno["dataMarcacao"]))."
                                     </p>
                                 </div>
                             </div>
