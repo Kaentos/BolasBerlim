@@ -28,15 +28,9 @@
         $stmt = $dbo -> prepare($query);
         $stmt -> execute($infoCodigo);
         if ($stmt -> rowCount() != 1) {
-            $query = "
-                SELECT *
-                FROM Codigo
-                WHERE idTurma = :idTurma AND idDisciplina = :idDisciplina;
-            ";
-            $stmt = $dbo -> prepare($query);
-            $stmt -> execute(array("idTurma" => $infoCodigo["idTurma"], "idDisciplina" => $infoCodigo["idDisciplina"]));
-            print_r($stmt -> fetchAll());
-            exit("Não válido");
+            mostraAlert("Código inválido / não existente: " . $infoCodigo["codigo"]);
+            gotoAulaAluno($infoCodigo["idDisciplina"]);
+            exit();
         }
         $idCodigo  = $stmt -> fetch();
 
