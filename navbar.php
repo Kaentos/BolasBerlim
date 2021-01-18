@@ -65,7 +65,7 @@
                         <div id='profileMenu' class='profileMenus'>
                             <a href='./profile.php'>Perfil</a>
                             <a href='#'>Definições</a>
-                            <a href='./php/logout.php'>logout</a>
+                            <a href='./php/logout.php'>Logout</a>
                         </div>
                     </div>
                 ";

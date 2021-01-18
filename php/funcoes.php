@@ -73,6 +73,7 @@
                     window.location.href = '/Real-Learn/formGestao.php';
                 </script>
             ";
+            exit();
         }
     }
 

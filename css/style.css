@@ -24,13 +24,14 @@ header {
 .headerLeft {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     width: 50%;
     align-items: center;
 }
 
 .logoContainer {
     margin: 0 2%;
+    margin-right: 50px;
     padding: 1% 2.5%;
     width: 5%;
     /*background-color: #afafaf4d;*/
@@ -150,20 +151,31 @@ header {
     
     width: 60%;
     height: 50%;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     border-radius: 200px;
     
 }
 
 .navBarItem {
-    width: 33%;
+    margin: 0px 10px;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 2%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: black;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 2px;
 }
+.navBarItem:hover {
+    color:white;
+    background-color: #2f2e41;
+    transition: 0.5s;
+}
+
 .active {
     background-color: #6765658f;
 }
