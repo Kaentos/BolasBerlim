@@ -1,5 +1,6 @@
 <?php
     session_start();
+    date_default_timezone_set("Europe/Lisbon");
 
     define("TIPO_ADMIN", "Administrador");
     define("TIPO_ALUNO", "Aluno");
