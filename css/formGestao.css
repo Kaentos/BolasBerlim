@@ -1,8 +1,13 @@
+body{
+    margin:0;
+}
 .mainContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 5%;
+    margin-top: 5%;
+    background-color: #b6b6b67a;
 }
 
 .formContainerPessoas {
@@ -37,11 +42,22 @@
 }
 
 .formContainerListaDuo {
-    border: 1px black solid;
+    border: solid 2px #6c63ff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 46%;
+    background-color: #afafaf;
+}
+.formContainerListaFull {
+    border: solid 2px #6c63ff;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     padding: 1%;
     width: 100%;
+    background-color: #afafaf;
 }
 .formContainerListaDuoHidden {
     /* border: 1px black solid;*/
@@ -55,7 +71,7 @@
 .dataColum {
     border: 1px black solid;
     text-align: center;
-    width: 32.6%;
+    width: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,10 +100,13 @@
 }
 
 .formBox {
-    border: 1px black solid;
+    /*border: 1px black solid;*/
+    border: solid 2px #6c63ff;
+    border-radius: 25px;
     display: flex;
     width: 43%;
     padding: 2.5%;
+    background-color: #afafaf;
 }
 
 
@@ -114,20 +133,45 @@
 .formRow input[type=text], input[type=password] {
     box-sizing: border-box;
     width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .formBox input[type=submit] {
     float: right;
+    background-color: #dcdcdc;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .formRow select {
     box-sizing: border-box;
     width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .formBox input[type=number],input[type=email] {
     box-sizing: border-box;
     width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 
@@ -170,4 +214,26 @@
     justify-content: space-between;
     text-align: center;
     align-items: center;
+}
+.search input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search button{
+    background-color: #dcdcdc;
+    color: black;
+    padding: 12px 18px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.titleBold{
+    font-weight: bold;
 }

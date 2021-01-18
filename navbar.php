@@ -1,8 +1,8 @@
 <header>
     <div class="headerLeft">
         <div class="logoContainer">
-            <a href="home.html">
-                <p>Logotipo</p>
+            <a href="index.php">
+               <img src="images/logo.svg" alt="" srcset="">
             </a>
         </div>
         <div class="navbar">
@@ -53,7 +53,7 @@
                             <p>
                                 Prof.Paulo Lava. É para entregar...
                             </p>
-                            <a href='' class='notificacoesBtn'>
+                            <a href='notificacoes.html' class='notificacoesBtn'>
                                 Todas
                             </a>
                         </div>

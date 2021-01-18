@@ -115,13 +115,13 @@
                 </div>
                 <div class="listaAluno">
                     <div class="dataColum">
-                        <p>ID curso</p>
+                        <p class="titleBold">ID curso</p>
                     </div>
                     <div class="dataColum">
-                        <p>Nome</p>
+                        <p class="titleBold">Nome</p>
                     </div>
                     <div class="dataColum">
-                        <p>Remover</p>
+                        <p class="titleBold"> Remover</p>
                     </div>
                 </div>
                 <div class="ListContent">
@@ -162,13 +162,13 @@
                 </div>
                 <div class="listaAluno">
                     <div class="dataColumTitle">
-                        <p>ID disciplina</p>
+                        <p class="titleBold">ID disciplina</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Nome</p>
+                        <p class="titleBold">Nome</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Remover</p>
+                        <p class="titleBold">Remover</p>
                     </div>
                 </div>
                 <div class="ListContent">
@@ -280,13 +280,13 @@
                 </div>
                 <div class="listaAluno">
                     <div class="dataColum">
-                        <p>ID curso</p>
+                        <p class="titleBold">ID curso</p>
                     </div>
                     <div class="dataColum">
-                        <p>Nome</p>
+                        <p class="titleBold">Nome</p>
                     </div>
                     <div class="dataColum">
-                        <p>Remover</p>
+                        <p class="titleBold">Remover</p>
                     </div>
                 </div>
                 <div class="ListContent">
@@ -327,16 +327,16 @@
                 </div>
                 <div class="listaAluno">
                     <div class="dataColumTitle">
-                        <p>ID turma</p>
+                        <p class="titleBold">ID turma</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Curso</p>
+                        <p class="titleBold">Curso</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Ano letivo</p>
+                        <p class="titleBold">Ano letivo</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Remover</p>
+                        <p class="titleBold">Remover</p>
                     </div>
                 </div>
                 <div class="ListContent">
@@ -439,16 +439,16 @@
             </div>
             <div class="listaAluno">
                 <div class="dataColumTitleLarge">
-                    <p>ID Professor</p>
+                    <p class="titleBold">ID Professor</p>
                 </div>
                 <div class="dataColumTitleLarge">
-                    <p>Nome</p>
+                    <p class="titleBold">Nome</p>
                 </div>
                 <div class="dataColumTitleLarge">
-                    <p>Email</p>
+                    <p class="titleBold">Email</p>
                 </div>
                 <div class="dataColumTitleLarge">
-                    <p>Remover</p>
+                    <p class="titleBold">Remover</p>
                 </div>
             </div>
             <div class="ListContent">
@@ -491,13 +491,13 @@
                 </div>
                 <div class="listaAluno">
                     <div class="dataColumTitle">
-                        <p>ID disciplina</p>
+                        <p class="titleBold">ID disciplina</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Nome</p>
+                        <p class="titleBold">Nome</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Remover</p>
+                        <p class="titleBold">Remover</p>
                     </div>
                 </div>
                 <div class="ListContent">
@@ -568,7 +568,7 @@
 
         </div>
         <div class="listasContainer">
-            <div class="formContainerListaDuo">
+            <div class="formContainerListaFull">
                 <div class="searchbar">
                     <p>Lista Alunos</p>
                     <div class="search">
@@ -582,19 +582,19 @@
                 
                 <div class="listaAluno">
                     <div class="dataColumTitle">
-                        <p>ID Aluno</p>
+                        <p class="titleBold">ID Aluno</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Nome</p>
+                        <p class="titleBold">Nome</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Email</p>
+                        <p class="titleBold">Email</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Turma</p>
+                        <p class="titleBold">Turma</p>
                     </div>
                     <div class="dataColumTitle">
-                        <p>Remover</p>
+                        <p class="titleBold">Remover</p>
                     </div>
                 </div>
                 <?php
