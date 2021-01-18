@@ -14,6 +14,7 @@ CREATE TABLE Administrador (
     email VARCHAR(256) UNIQUE NOT NULL,
     password TEXT NOT NULL,
     data_criacao DATETIME DEFAULT NOW() NOT NULL,
+    ultimo_login DATETIME DEFAULT NOW() NOT NULL,
     CONSTRAINT TB_Administrador_email_U UNIQUE (email)
 );
 
