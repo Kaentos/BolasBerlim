@@ -14,9 +14,31 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 5%;
     padding: 1%;
     background-color: #afafaf4d;
+}
+
+.dia {
+    padding: 10px 0px;
+    text-align: center;
+    width: 150px;
+    background-color: #6c63ff;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.dia > div {
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.hoje {
+    color: white;
+    background-color: #2f2e41 !important;
+    font-weight: bold;
 }
 
 .content {
@@ -98,10 +120,3 @@ header {
     width: 75%;
 }
 
-.dia {
-    margin: 0 2%;
-    padding: 1% 2.5%;
-    width: 5%;
-    background-color: #afafaf4d;
-    border-radius: 25px;
-}

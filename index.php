@@ -41,6 +41,18 @@
     if (count($todasDisciplinas) == 0) {
         die("Erro critico. Por favor contacte um administrador.");
     }
+
+    function getStartAndEndDate($week, $year) {
+        
+        return $period;
+    }
+    $dto = new DateTime();
+    $dto->setISODate(date("Y"), date("W"));
+    $semanaPeriod = new DatePeriod(
+        new DateTime($dto->format("Y-m-d")),
+        new DateInterval('P1D'),
+        new DateTime($dto->modify("+7 days")->format("Y-m-d"))
+    );
 ?>
 
 <!DOCTYPE html>
@@ -60,27 +72,41 @@
     ?>
     <div class="mainContainer">
         <div class="diasSemana">
-            <div class="dia">
-                <p>Segunda</p>
-            </div>
-            <div class="dia">
-                <p>Terça</p>
-            </div>
-            <div class="dia">
-                <p>Quarta</p>
-            </div>
-            <div class="dia">
-                <p>Quinta</p>
-            </div>
-            <div class="dia">
-                <p>Sexta</p>
-            </div>
-            <div class="dia">
-                <p>Sabado</p>
-            </div>
-            <div class="dia">
-                <p>Domingo</p>
-            </div>
+            <?php
+                foreach($semanaPeriod as $dataOmg) {
+                    $diaDaSemana = date("w", strtotime($dataOmg->format("Y-m-d")));
+                    if ($diaDaSemana == date("w")) {
+                        echo "<div class='dia hoje'>";
+                    } else {
+                        echo "<div class='dia'>";
+                    }
+                    switch($diaDaSemana) {
+                        case 0:
+                            $nomeDia = "Domingo";
+                        break;
+                        case 1:
+                            $nomeDia = "Segunda";
+                        break;
+                        case 2:
+                            $nomeDia = "Terça";
+                        break;
+                        case 3:
+                            $nomeDia = "Quarta";
+                        break;
+                        case 4:
+                            $nomeDia = "Quinta";
+                        break;
+                        case 5:
+                            $nomeDia = "Sexta";
+                        break;
+                        case 6:
+                            $nomeDia = "Sábado";
+                        break;
+                                
+                    }
+                    echo "<div>$nomeDia</div><div>".$dataOmg->format("d-m-Y")."</div></div>";
+                }
+            ?>
         </div>
         <div class="content">
             <div class="disciplinasContainer">
