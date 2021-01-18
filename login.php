@@ -33,14 +33,17 @@
         <div class="formContainer">
             <form action="./php/login.php" method="POST">
                 <div class="formFields">
-                    <label for="user">User</label>
+                    <label for="user">Email de utilizador:</label>
                     <input type="text" name="user" >
-                    <label for="password">Password</label>
+                    <label for="password">Password:</label>
                     <input type="password" name="password" >
                     <br>
                     <a href="#">Forget Password</a>
                 </div>
-                <button type="submit">Submit</button>
+                <div class="botaoDiv">
+                    <input type="submit" value="Login">
+                </div>
+                
             </form>
         </div>
     </div>

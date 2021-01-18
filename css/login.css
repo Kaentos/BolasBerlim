@@ -6,22 +6,21 @@
     width: 50%;
     
     background-color: #afafaf4d;
-    
 }
 
 .imgContainer {
     justify-content: space-around;
     text-align: center;
-    min-height: 100px;
     border-bottom: 1px solid black;
-    margin: 5%;
+    margin: auto;
+    width: 95%;
 }
 
 .formContainer {
     display: flex;
     flex-direction: column;
     padding: 0 25%;
-    margin-top: 5%;
+    margin-top: 20px;
 }
 
 .formFields {
@@ -29,22 +28,38 @@
     flex-direction: column;
 }
 
+.formFields label {
+    font-size: 1.2rem;
+}
+
 .formFields input {
     /*margin-left: 25%;
     width: 50%;*/
-    margin: 5% 0;
+    margin: 5px 0px;
+    font-size: 1.2rem;
+    padding: 10px;
 }
 /*
 .formFields label {
     margin-left: 25%;
 }*/
-
-.formContainer button {
+.botaoDiv {
+    text-align: center;
+    margin: 25px 0px;
+}
+.botaoDiv > input {
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    background-color: white;
+    border: 1px solid black; 
+}
+.botaoDiv > input:hover {
     /*margin-bottom: 5%;*/
-    margin: 10% 0;
-    margin-left: 37.5%;
-    width: 25%;
-    
+    background-color: #6c63ff;
+    transition: 0.5s;
+    color: white;
 }
 
 .loginTitle{
