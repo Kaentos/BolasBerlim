@@ -17,9 +17,18 @@
     <title>Login</title>
 </head>
 <body>
+    <div class="loginTitle">
+        <h1>
+            Plataforma e-Learning <br>
+            Real-Learn
+        </h1>
+    </div>
     <div class="container">
         <div class="imgContainer">
-            <img class="profileImg" src="images/user.png" alt="">
+            <h1>
+                Iniciar Sessão
+            </h1>
+            <!--<img class="profileImg" src="images/user.png" alt="">-->
         </div>
         <div class="formContainer">
             <form action="./php/login.php" method="POST">
