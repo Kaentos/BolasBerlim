@@ -180,3 +180,7 @@ header {
 .logoContainer img{
     width: 210%;
 }
+
+.dropdownBox:hover .notificacoesMenu{
+    display: flex;
+}

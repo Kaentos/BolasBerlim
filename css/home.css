@@ -7,7 +7,7 @@ header {
     flex-direction: column;
     justify-content: space-around;
     padding: 5%;
- 
+    margin-top: 5%;
 }
 
 .diasSemana {
