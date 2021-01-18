@@ -13,6 +13,12 @@ header {
    /* margin-bottom: 5%; */
     padding: 1%;
     justify-content: space-between;
+    background-color: #9691e3;
+    box-shadow: 0px 4px 7px 0px #6c63ff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .headerLeft {
@@ -27,7 +33,7 @@ header {
     margin: 0 2%;
     padding: 1% 2.5%;
     width: 5%;
-    background-color: #afafaf4d;
+    /*background-color: #afafaf4d;*/
 }
 
 .headerProfile {
@@ -37,7 +43,7 @@ header {
     margin: 0 2%;
     padding: 1% 2.5%;
     width: 9%;
-    background-color: #afafaf2c;
+    /*background-color: #afafaf2c;*/
     align-items: center;
 }
 
@@ -96,12 +102,12 @@ header {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 257px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px #6c63ff;
     z-index: 1;
     border: 1px solid;
     align-items: center;
-    padding: 7%;
-    right: -140px;
+    padding: 20%;
+    right: -120px;
 }
 
 .notificacoesMenu p {
@@ -117,12 +123,14 @@ header {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    box-shadow: 0px 8px 16px 0px #6c63ff;
     z-index: 1;
     border: 1px solid;
     align-items: center;
     padding: 7%;
     right: -26px;
+    align-items: flex-start;
 }
 
 .profileMenus a {
@@ -139,10 +147,11 @@ header {
 .navbar {
     display: flex;
     flex-direction: row;
-    background-color: #afafaf4d;
+    
     width: 60%;
     height: 50%;
     justify-content: space-between;
+    border-radius: 200px;
     
 }
 
@@ -157,4 +166,7 @@ header {
 }
 .active {
     background-color: #6765658f;
+}
+.logoContainer img{
+    width: 210%;
 }
