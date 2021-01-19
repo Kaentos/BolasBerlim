@@ -96,7 +96,7 @@
         
     <div class="container">
         <div class="imgContainer">
-            <img class="profileImg" src="images/user.png" alt="">
+            <img class="profileImg" src="images/maleAvatar.svg" alt="">
         </div>
         <div class="infoContainer">
             <?php

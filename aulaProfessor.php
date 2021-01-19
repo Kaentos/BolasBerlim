@@ -133,7 +133,7 @@
                     <h2>Todos os Alunos</h2>
                 </div>
                 <div class="exitWindow">
-                    <img src="images/fechar.png" onclick="listaAlunosMenu()" />
+                    <img src="images/close.svg" onclick="listaAlunosMenu()" />
                 </div>
             </div>
             <div class="listaAlunos">
@@ -149,13 +149,20 @@
                         foreach($todosAlunos as $aluno) {
                             echo "
                                 <div class='listaAlunoRow'>
-                                    <p>".$aluno["id"]."</p>
-                                    <p>".$aluno["nome"]."</p>
-                                    <p>
-                                        <a href='/Real-Learn/profile.php?id=".$aluno["id"]."&tipo=".TIPO_ALUNO."'>
-                                            ver perfil
-                                        </a>    
-                                    </p>
+                                    <div class='dataColum'>
+                                        <p>".$aluno["id"]."</p>
+                                    </div>
+                                    <div class='dataColum'>
+                                        <p>".$aluno["nome"]."</p>
+                                    </div>
+                                    <div class='dataColumBtn'>
+                                        <p>
+                                            <a href='/Real-Learn/profile.php?id=".$aluno["id"]."&tipo=".TIPO_ALUNO."'>
+                                                ver perfil
+                                            </a>    
+                                        </p>
+                                    </div>
+                                    
                                 </div>
                             ";
                         }
@@ -170,7 +177,7 @@
             <div class="listaAlunosContainer" id="listaCodigos">
                 <div class="tituloHidden">
                     <h2>Todos os Codigos</h2>
-                    <img src="images/fechar.png" onclick="listaTodosCodigos()" />
+                    <img src="images/close.svg" onclick="listaTodosCodigos()" />
                 </div>
                 <div class="hiddenContent">
                     <div class="hiddenRowTable">
@@ -247,7 +254,7 @@
                                 <div class='listaAlunosContainer' id='verCodigo-".$key."'>
                                     <div class='tituloHidden'>
                                         <h2>Código: $key</h2>
-                                        <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
+                                        <img src='images/close.svg' onclick='verCodigo(\"$key\")' />
                                     </div>
                                     <h3>
                                         Nenhum aluno registou o código!
@@ -262,7 +269,7 @@
                             <div class='listaAlunosContainer' id='verCodigo-".$key."'>
                                 <div class='tituloHidden'>
                                     <h2>Código: $key</h2>
-                                    <img src='images/fechar.png' onclick='verCodigo(\"$key\")' />
+                                    <img src='images/close.svg' onclick='verCodigo(\"$key\")' />
                                 </div>
                                 <h3>
                                     ".date("H:i:s d-m-Y", strtotime($value["inicio"]))." a ".date("H:i:s d-m-Y", strtotime($value["fim"]))."
@@ -317,7 +324,7 @@
             <div class="listaAlunosContainer" id="criarCodigo">
                 <div class="tituloHidden">
                     <h2>Criar Novo Codigo</h2>
-                    <img src="images/fechar.png" onclick="criarCodigo()" />
+                    <img src="images/close.svg" onclick="criarCodigo()" />
                 </div>
                 <div class="hiddenContent">
                     <form action="./php/criarCodigo.php" method="POST">
@@ -345,7 +352,7 @@
             <div class="listaAlunosContainer" id="criarNotificacao">
                 <div class="tituloHidden">
                     <h2>Criar Notificação</h2>
-                    <img src="images/fechar.png" onclick="criarNotificacao()" />
+                    <img src="images/close.svg" onclick="criarNotificacao()" />
                 </div>
                 <div class="hiddenContent">
                     <form action="" method="POST">
@@ -364,7 +371,7 @@
             <div class="listaAlunosContainer" id="novoItem">
                 <div class="tituloHidden">
                     <h2>Novo item</h2>
-                    <img src="images/fechar.png" onclick="novoItem()" />
+                    <img src="images/close.svg" onclick="novoItem()" />
                 </div>
 
                 <div class="hiddenContent">
@@ -391,7 +398,7 @@
                     <h2>Submissão Trabalho 1</h2>
                 </div>
                 <div class="exitWindow">
-                    <img src="images/fechar.png" onclick="listaFicheirosMenu()" />
+                    <img src="images/close.svg" onclick="listaFicheirosMenu()" />
                 </div>
             </div>
             <div class="listaFicheiros">
