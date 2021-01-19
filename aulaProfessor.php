@@ -426,7 +426,11 @@
     <div class="mainContainer">
         <div class="tituloContainer">
             <div class="tituloDescricao">
-                <p>titulo</p>
+                <p>
+                    <?php
+                        echo $titulo["disciplina"] ." (". $titulo["curso"].")";
+                    ?>
+                </p>
                 <button class="titlebtn" onclick="listaAlunosMenu()">Alunos</button>
             </div>
             <div class="titulobotoes">
@@ -436,7 +440,6 @@
             </div>
         </div>
         <div class="listaAulas">
-            lista inicio
             <div class="aulaContainer">
                 <div class="aulaHeader">
                     <div class="aulaTitulo">
@@ -566,7 +569,6 @@
                         <img src="images/plus.png" alt="" class="plusIcon" />
                     </a>
                 </div>
-                lista end
             </div>
         </div>
     </div>

@@ -69,7 +69,7 @@
                         </div>
                         <div class='dropdownBoxProfile'>
                             <a href='profile.php'>
-                                <img class='profileImg' src='images/mailAvatar.svg'>
+                                <img class='profileImg' src='images/maleAvatar.svg'>
                             </a>
                             <div id='profileMenu' class='profileMenus'>
                                 <div>
