@@ -11,6 +11,13 @@ body{
 
 .aulaFicheiros {
     padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.aulaFicheiros a {
+    font-weight: bold;
+    color: black;
 }
 
 .aulaSubmicoes {
@@ -22,15 +29,31 @@ body{
    
 }
 
+.submi {
+    font-weight: bold;
+}
+
+.submeterBtn {
+    background-color: #6c63ff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+.submeterBtn:hover {
+    background-color: #2f2e41;
+    transition: 0.5s;
+}
+
 .aulaFile {
     display: flex;
 }
 
 .aulasubmicao {
-    display: flex;
-    flex-direction: row;    
+    display: flex;    
     align-items: center;
-    box-sizing: border-box;
+    padding: 10px;
 }
 
 
@@ -146,16 +169,6 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-right: 25px;
-}
-
-.aulasubmicao input[type="submit"] {
-    background-color: #000000;
-    color: white;
-    padding: 6px 10px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 .tituloHidden img {
     width: 25px;
