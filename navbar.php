@@ -39,7 +39,7 @@
             if(isset($navbar_dados)) {
                 echo "
                     <div class='dropdownBox'>
-                        <img onclick='notificacaoMenuFun()' class='profileNotificacoes' src='images/bell.png'>
+                        <img onclick='notificacaoMenuFun()' class='profileNotificacoes' src='images/sent.svg'>
                         <div id='notificacoesMenu' class='notificacoesMenu'>
                             <p>
                                 Prof.Paulo Lava. É para entregar...
@@ -60,7 +60,7 @@
                     </div>
                     <div class='dropdownBoxProfile'>
                         <a href='profile.html'>
-                            <img class='profileImg' src='images/user.png'>
+                            <img class='profileImg' src='images/maleAvatar.svg'>
                         </a>
                         <div id='profileMenu' class='profileMenus'>
                             <a href='./profile.php'>Perfil</a>

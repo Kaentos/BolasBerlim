@@ -48,11 +48,12 @@ header {
 }
 
 .profileImg{
-    width: 75px;
+    width: 45px;
 }
 .profileNotificacoes{
-    width: 50px;
+    width: 65px;
     height: 50px;
+    margin-right: 10px;
 }
 
 .notificacoesBtn {
