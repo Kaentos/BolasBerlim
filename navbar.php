@@ -53,13 +53,13 @@
                             <p>
                                 Prof.Paulo Lava. É para entregar...
                             </p>
-                            <a href='notificacoes.html' class='notificacoesBtn'>
+                            <a href='notificacoes.php' class='notificacoesBtn'>
                                 Todas
                             </a>
                         </div>
                     </div>
                     <div class='dropdownBoxProfile'>
-                        <a href='profile.html'>
+                        <a href='profile.php'>
                             <img class='profileImg' src='images/maleAvatar.svg'>
                         </a>
                         <div id='profileMenu' class='profileMenus'>

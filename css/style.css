@@ -56,7 +56,7 @@ header {
     margin-right: 10px;
 }
 
-.notificacoesBtn {
+/* .notificacoesBtn {
     background-color: #afafaf4d;
     border:2px solid  #575353;
     width: 35%;
@@ -64,8 +64,28 @@ header {
     text-align: center;
     text-decoration: none;
     color: black;
-}
+} */
 
+.notificacoesBtn {
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.notificacoesBtn:hover {
+    color: white;
+    background-color: #2f2e41 !important;
+    font-weight: bold;
+    transition: 0.5s;
+}
 /*MENUS ESCONDIDOS*/
 .profileMenu{
     background-color: #ffffff;
