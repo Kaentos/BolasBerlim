@@ -3,19 +3,16 @@ body{
 }
 .aulaColumn {
     display: flex;
-    flex-direction: column;
-    width: 75%;
+    width: 100%;
     height: 100%;
     background-color: #afafaf4d;
 }
 
 .aulaFicheiros {
     display: flex;
-    flex-direction: row;
-    width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 1%;
+    padding: 10px;
 }
 
 .aulaSubmicoes {
@@ -28,40 +25,55 @@ body{
 
 .aulaFile {
     display: flex;
-    width: 25%;
-    margin-bottom: 1%;
+    align-items: center;
 }
 
+.aulaFile a:first-child {
+    font-weight: bold;
+    color: black;
+}
+
+
 .aulasubmicao {
-    display: flex;
-    flex-direction: row;    
+    display: flex;    
     align-items: center;
-    box-sizing: border-box;
-    width: 33%;
+    padding: 10px;
+}
+
+.submissaoTitulo {
+    font-weight: bold;
 }
 
 .aulaHeader {
     display: flex;
-    flex-direction: row;
-    background-color: #afafaf4d;
+    justify-content: space-between;
+    background-color: #afafaf98;
+    border: 1px solid #949494ee;
+    border-radius: 2px;
+}
+
+.aulaTitulo {
+    padding: 10px;
+    font-size: 1.5rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.inserirFicheiro {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.inserirFicheiro > div:first-child {
+    margin-right: 15px;
 }
 
 .aulaContent {
     display: flex;
     flex-direction: row;
     background-color: #afafaf4d;
-}
-
-.tituloContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 32px;
-    background-color: #afafaf4d;
-    align-items: center;
-    height: 100px;
 }
 
 .plusIcon {
@@ -73,12 +85,18 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.customH2 {
+    margin-bottom: 5px;
 }
 
 .newAula input {
-    margin-left: 1%;
     font-size: 20px;
-    width: 35%;
+    padding: 5px;
+    min-width: 400px;
 }
 
 .tituloContainer {
@@ -101,7 +119,6 @@ body{
     text-align: center;
     color: black;
     border: 1px solid #6c63ff;
-    margin-left: 15px;
     border-radius: 2px;
 }
 .titlebtn:hover {
@@ -118,30 +135,41 @@ body{
     align-items: center;
     margin-right: 25px;
 }
+.titulobotoes > button {
+    margin-left: 10px;
+}
 
 .tituloDescricao {
     display: flex;
-    flex-direction: row;
-    justify-content: start;
     align-items: center;
-    padding: 10px;
     font-weight: bold;
 }
 
-.tituloDescricao a{
-    margin-left: 5%;
-    font-size: 14px;
+.tituloDescricao p {
+    padding: 25px;
+    margin: 0;
 }
 
 .profMenu {
     display: flex;
-    flex-direction: row;
-    margin-left: 5%;
+    align-items: center;
 }
-
-.profMenu img {
-    width: 50%;
-    margin: 0%;
+.profMenu > div {
+    display: flex;
+    margin-left: 10px;
+}
+.profMenu button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.profMenu button > img {
+    width: 25px;
+    padding: 5px;
 }
 
 .profbtn {
@@ -280,12 +308,6 @@ body{
     border: 1px solid black;
 }
 
-.hiddenRow{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 4%;
-}
 .hiddenRowTable{
     display: flex;
     flex-direction: row;
@@ -353,8 +375,6 @@ body{
     width: 20%;
 }
 
-
-
 .listaAulas {
     padding: 25px;
     background-color: #afafaf4d;
@@ -365,36 +385,12 @@ body{
     margin-bottom: 25px;
 }
 
-.aulaTitulo {
-    padding: 10px;
-    font-size: 1.5rem;
-    background-color: #afafaf98;
-    border: 1px solid #afafafd2;
-}
 .mainContainer {
     margin-top: 150px;
     width: 90%;
     margin: 150px auto 50px auto;
 }
-.inserirCodigoContainer {
-    display: none;
-    flex-direction: column;
-    background-color: #afafaf;
-    width: 25%;
-    position: absolute;
-    padding: 2%;
-    left: 37.5%;
-    top: 25%;
-    z-index: 1;
-}
 
-.tituloHidden {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 15px;
-
-}
 .hiddenContent{
     display: flex;
     flex-direction: column;
@@ -403,26 +399,9 @@ body{
     text-align: center;
     
 }
-.hiddenRow{
+.hiddenRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 4%;
-}
-.hiddenRow input[type="text"] {
-    margin-left: 6%;
-    padding: 6px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.hiddenContent input[type=submit] {
-    background-color: #000000;
-    color: white;
-    padding: 8px 15px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
