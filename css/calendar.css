@@ -1,4 +1,6 @@
-
+body{
+  margin: 0;
+}
   
   .explanation {
     background: var(--color);
@@ -49,8 +51,8 @@
     background-color: #afafafd2;
     padding: 15px;
     position: relative;
-    font-size: 20px;
-    height: 155px;
+    font-size: 15px;
+    height: 120px;
     box-sizing: border-box;
   }
   
@@ -78,9 +80,16 @@
   .main-content {
     display: grid;
     grid-auto-flow: row;
-    grid-template-rows: repeat(5, 155px);
-    grid-template-columns: repeat(7, minmax(170px, 1fr));
-    margin-top: 10%;
+    grid-template-rows: repeat(5, 120px);
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    width: 90%;
+    margin: auto;
+  }
+  .mainContainer {
+    margin-top: 150px;
+  }
+  .mainContainer h1{
+    margin-left: 10%;
   }
   
   .event {
