@@ -425,7 +425,10 @@ body{
     flex-direction: row;
     justify-content: space-between;
     font-size: 15px;
-
+    padding: 0% 2%;
+}
+.tituloHidden + h3{
+    padding: 0% 2%;
 }
 .hiddenContent{
     display: flex;
