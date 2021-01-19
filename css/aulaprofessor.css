@@ -320,7 +320,7 @@ body{
 }
 .hiddenRow input[type="text"] {
     margin-left: 6%;
-    padding: 6px 20px;
+    padding: 6px 10px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -421,4 +421,36 @@ body{
     margin-top: 150px;
     width: 90%;
     margin: 150px auto 50px auto;
+}
+
+.tituloHidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 0% 2%;
+}
+.tituloHidden + h3{
+    padding: 0% 2%;
+}
+.hiddenContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
+    text-align: center;
+    
+}
+.hiddenRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 4%;
+}
+
+.exitWindow img {
+    width: 25px;
+}
+.tituloHidden img {
+    width: 25px;
 }

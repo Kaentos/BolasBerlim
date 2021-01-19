@@ -24,7 +24,7 @@
                                 <a href='/Real-Learn/disciplinas.php' class='navBarItem'>
                                     Disciplinas
                                 </a>
-                                <a href='/Real-Learn/calendario.html' class='navBarItem'>
+                                <a href='/Real-Learn/calendario.php' class='navBarItem'>
                                     Calendario
                                 </a>
                             ";

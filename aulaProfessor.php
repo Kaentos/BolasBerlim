@@ -471,12 +471,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inserirFicheiro" onclick="novoItem()">
+                    <div style="cursor:pointer;" class="inserirFicheiro" onclick="novoItem()">
                         <div>
                             Novo Item
                         </div>
                         <div>
-                            <img src="images/plus.png" alt="" class="plusIcon"/>
+                            <img src="images/add.svg" alt="" class="plusIcon"/>
                         </div>
                     </div>
                 </div>
@@ -582,7 +582,7 @@
                     </div>
                     
                     <a href="">
-                        <img src="images/plus.png" alt="" class="plusIcon" />
+                        <img src="images/folder.svg" alt="" class="plusIcon" />
                     </a>
                 </form>
             </div>
