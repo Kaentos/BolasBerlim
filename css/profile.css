@@ -28,13 +28,19 @@
     font-size: 14px;
 }
 
-.editarbtn {
-    background-color: #afafaf4d;
-    border:2px solid  #575353;
-    width: 35%;
+
+.editarbtn{
+    background-color: #6c63ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
     float: right;
-    text-align: center;
     text-decoration: none;
-    color: black;
+    margin-right: 10px;
 }
+
 

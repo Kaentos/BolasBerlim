@@ -84,30 +84,48 @@
     <?php
         include("navbar.php");
     ?>
+    <!-- Inserir código -->
+    <div class="hiddenDivs">
+        <div class="inserirCodigoContainer" id="inserirCodigo">
+            <div class="tituloHidden">
+                <h2>Inserir Codigo</h2>
+                <img src="images/fechar.png" onclick="inserirCodigo()" />
+            </div>
+            <div class="hiddenContent">
+                <form action="./php/aluno_marcaCodigo.php" method="POST">
+                    
+                    <div class="hiddenRow">
+                        <label for="codigoNome">Codigo*</label>
+                        <input type="text" name="codigo">
+                        <input type="hidden" name="idDisciplina" value="<?php echo $idDisciplina  ?>">
+                    </div>
+                    Professor(es):
+                    <?php
+                        foreach($todosProfessores as $prof) {
+                            echo "
+                                <a href='/Real-Learn/profile.php?id=".$prof["id"]."&tipo=".TIPO_PROFESSOR."'>
+                                    ".$prof["nome"]."
+                                </a><br>
+                            ";
+                        }
+                    ?>
+                    <br>
+                    <input type="submit" value="Confirmar Presença">
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="mainContainer">
         <div class="tituloContainer">
             <p>titulo</p>
-        </div>
-        <div class="listaAulas">
-            lista inicio
-            <div>
-                <form action="./php/aluno_marcaCodigo.php" method="POST">
-                    Codigo*:
-                    <input type="text" name="codigo">
-                    <input type="hidden" name="idDisciplina" value="<?php echo $idDisciplina  ?>">
-                    <input type="submit" value="Confirmar presença">
-                </form>
-                Professor(es):
-                <?php
-                    foreach($todosProfessores as $prof) {
-                        echo "
-                            <a href='/Real-Learn/profile.php?id=".$prof["id"]."&tipo=".TIPO_PROFESSOR."'>
-                                ".$prof["nome"]."
-                            </a><br>
-                        ";
-                    }
-                ?>
+
+            <div class="titulobotoes">
+                <button class="titlebtn" onclick="inserirCodigo()">Inserir Codigo</button>
             </div>
+        </div>
+        
+        <div class="listaAulas">
+            
             <div class="aulaContainer">
                 <div class="aulaTitulo">
                     Aula 1 - 20/10/1928 | 8:30 - 20:30
@@ -190,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            lista end
+            
         </div>
     </div>
 </body>
