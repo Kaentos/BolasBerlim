@@ -64,9 +64,7 @@
     ?>
     <div class="mainContainer">
         <div class="searchbar">
-            <button>
-                ok
-            </button>
+            
             <input type="text" name="search" placeholder="search">
         </div>
         <div class="disciplinasContainer">

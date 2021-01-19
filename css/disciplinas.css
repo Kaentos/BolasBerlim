@@ -19,8 +19,8 @@
 .mainContainer {
     margin: auto;
     width: 90%;
-    margin-top: 8%;
-    background-color: #afafaf4d;
+    margin-top: 10%;
+    /* background-color: #afafaf4d; */
 }
 
 /* .disciplina {
@@ -47,9 +47,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 80px;
 }
 
 .disciplina a{
     color: white;
     text-decoration: none;
+}
+
+.disciplina:hover {
+    color: white;
+    background-color: #2f2e41 !important;
+
+    transition: 0.5s;
 }

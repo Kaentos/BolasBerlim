@@ -89,7 +89,7 @@
         <div class="inserirCodigoContainer" id="inserirCodigo">
             <div class="tituloHidden">
                 <h2>Inserir Codigo</h2>
-                <img src="images/fechar.png" onclick="inserirCodigo()" />
+                <img src="images/close.svg" onclick="inserirCodigo()" />
             </div>
             <div class="hiddenContent">
                 <form action="./php/aluno_marcaCodigo.php" method="POST">
@@ -110,7 +110,10 @@
                         }
                     ?>
                     <br>
+                    <div class="submitBtn">
                     <input type="submit" value="Confirmar Presença">
+                    </div>
+                    
                 </form>
             </div>
         </div>
