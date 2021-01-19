@@ -57,11 +57,27 @@ header {
 }
 
 .disciplina {
-    margin: 0 2%;
+    /* margin: 0 2%;
     padding: 1% 2.5%;
     width: 7%;
     background-color: #afafaf4d;
-    border-radius: 25px;
+    border-radius: 25px; */
+    padding: 10px 10px;
+    text-align: center;
+    width: 150px;
+    background-color: #6c63ff;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disciplina a {
+    color: white;
+    text-decoration: none;
 }
 
 .infoContainer {
@@ -82,10 +98,11 @@ header {
 .compromissosRow{
     display: flex;
     flex-direction: row;
-    background-color: #afafaf4d;
+    /* background-color: #afafaf4d; */
     padding: 2%;
     margin-bottom: 2%;
-
+    background-color: #6c63ff;
+    color: white;
 }
 .compromissosData{
     width: 35%;
@@ -106,9 +123,11 @@ header {
 .notificacoesRow{
     display: flex;
     flex-direction: row;
-    background-color: #afafaf4d;
+    /* background-color: #afafaf4d; */
     padding: 2%;
     margin-bottom: 2%;
+    background-color: #6c63ff;
+    color: white;
 
 }
 
