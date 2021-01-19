@@ -182,10 +182,10 @@ body{
     display: none;
     flex-direction: column;
     background-color: #afafaf;
-    width: 25%;
+    width: 35%;
     position: absolute;
     padding: 2%;
-    left: 37.5%;
+    left: 32.5%;
     top: 25%;
     z-index: 1;
 }
@@ -220,7 +220,7 @@ body{
 }
 
 .listaAlunoRow p{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     margin: auto;
     text-align: center;
@@ -260,7 +260,7 @@ body{
 .descricaoWindow {
     width: 85%;
     text-align: center;
-    margin-left: 15%;
+    /* margin-left: 15%; */
 }
 
 .exitWindow {
@@ -279,7 +279,7 @@ body{
 .descricaoListaFicheiro{
     font-size: 24px;
     text-align: left;
-    margin-left: 2%;
+    margin-left: 10%;
 }
 
 .listaFicheiroRow {
@@ -334,16 +334,25 @@ body{
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 .hiddenContent input[type=submit] {
-    width: 30%;
-    background-color: #000000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: white;
+    align-items: center;
+    padding: 10px 10px;
+    text-align: center;
+    color: black;
+    border: 1px solid #6c63ff;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+.hiddenContent input[type=submit]:hover {
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    background-color: #2f2e41 !important;
+    font-weight: bold;
+    transition: 0.5s;
+}
 
 .tituloHidden img{
     width: 13%;
@@ -357,6 +366,29 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.dataColumBtn {
+    border: 1px black solid;
+    text-align: center;
+    width: 32.6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.dataColumBtn:hover {
+    background-color: #2f2e41 !important;
+    transition: 0.5s;
+}
+.dataColumBtn:hover a{
+    color: white;
+    transition: 0.5s;
+}
+.dataColumBtn a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 .dataOption{
     display: flex;
@@ -389,19 +421,4 @@ body{
     margin-top: 150px;
     width: 90%;
     margin: 150px auto 50px auto;
-}
-
-.hiddenContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2%;
-    text-align: center;
-    
-}
-.hiddenRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 4%;
 }

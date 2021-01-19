@@ -138,3 +138,9 @@ header {
   display: flex;
   justify-content: center;
 }
+.titlebtn:hover {
+  color: white;
+  background-color: #2f2e41 !important;
+  font-weight: bold;
+  transition: 0.5s;
+}

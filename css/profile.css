@@ -7,6 +7,7 @@
     width: 35%;
     background-color: #9691e3;
     font-size: 20px;
+    margin-top: 150px;
 }
 
 .imgContainer {
@@ -19,13 +20,15 @@
 
 
 .infoContainer {
-    padding-left: 3%;
+    padding-left: 5%;
+    color: white;
 }
 
 .acessoContainer {
     margin: 1% 0;
     text-align: center;
     font-size: 14px;
+    color: white;
 }
 
 
