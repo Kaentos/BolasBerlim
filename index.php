@@ -41,17 +41,12 @@
     if (count($todasDisciplinas) == 0) {
         die("Erro critico. Por favor contacte um administrador.");
     }
-
-    function getStartAndEndDate($week, $year) {
-        
-        return $period;
-    }
-    $dto = new DateTime();
-    $dto->setISODate(date("Y"), date("W"));
+    $dataAtual = new DateTime();
+    $dataAtual->setISODate(date("Y"), date("W"));
     $semanaPeriod = new DatePeriod(
-        new DateTime($dto->format("Y-m-d")),
+        new DateTime($dataAtual->format("Y-m-d")),
         new DateInterval('P1D'),
-        new DateTime($dto->modify("+7 days")->format("Y-m-d"))
+        new DateTime($dataAtual->modify("+7 days")->format("Y-m-d"))
     );
 ?>
 
@@ -72,7 +67,7 @@
     ?>
     <div class="mainContainer">
         <h1>
-            Semana X
+            Semana <?php echo date("W"." \d\\e Y"); ?>
         </h1>
         <div class="diasSemana">
             <?php

@@ -450,7 +450,9 @@
             <div class="aulaContainer">
                 <div class="aulaHeader">
                     <div class="aulaTitulo">
-                        Aula 1 - 20/10/1928 | 8:30 - 20:30
+                        <div>
+                            Aula 1 - 20/10/1928 | 8:30 - 20:30
+                        </div>
                         <div class="profMenu">
                             <div>
                                 <a href="">
@@ -470,13 +472,16 @@
                         </div>
                     </div>
                     <div class="inserirFicheiro" onclick="novoItem()">
-                        Novo Item
-                        <img src="images/plus.png" alt="" class="plusIcon"/>
+                        <div>
+                            Novo Item
+                        </div>
+                        <div>
+                            <img src="images/plus.png" alt="" class="plusIcon"/>
+                        </div>
                     </div>
                 </div>
                 <div class="aulaContent">
                     <div class="aulaColumn">
-                        column 1
                         <div class="aulaFicheiros">
                             <div class="aulaFile">
                                 <a href="">
@@ -500,6 +505,8 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="aulaFicheiros">
                             <div class="aulaFile">
                                 <a href="">
                                     ficheiro2.docx
@@ -523,59 +530,61 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="aulaSubmicoes">
-                            <div class="aulasubmicao">
-                                <h4>Submissão Trabalho 1</h4>
-                                <div class="profMenu">
-                                    <div>
-                                        <a href="">
-                                            <img src="images/visto.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/apagar.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <button>
-                                            <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
-                                        </button>
-                                    </div>
+                        
+                        <div class="aulasubmicao">
+                            <div class="submissaoTitulo">Submissão Trabalho 1</div>
+                            <div class="profMenu">
+                                <div>
+                                    <a href="">
+                                        <img src="images/visto.png" alt="" class="profbtn"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="">
+                                        <img src="images/apagar.png" alt="" class="profbtn"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <button>
+                                        <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="aulasubmicao">
-                                <h4>Titulo 2</h4>
-                                <div class="profMenu">
-                                    <div>
-                                        <a href="">
-                                            <img src="images/visto.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/apagar.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <button>
-                                            <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
-                                        </button>
-                                    </div>
+                        </div>
+                        <div class="aulasubmicao">
+                            <div class="submissaoTitulo">Titulo 2</div>
+                            <div class="profMenu">
+                                <div>
+                                    <a href="">
+                                        <img src="images/visto.png" alt="" class="profbtn"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="">
+                                        <img src="images/apagar.png" alt="" class="profbtn"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <button>
+                                        <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="aulaColumnRight">column 4</div>
-                    </div>
                 </div>
-                <h2>Nova Aula</h2>
-                <div class="newAula">
-                    <input type="text" name="nomeAula" />
+
+                <h2 class="customH2">Nova Aula</h2>
+                <form class="newAula">
+                    <div>
+                        Nome do divisor:
+                        <input type="text" name="nomeAula" />
+                    </div>
+                    
                     <a href="">
                         <img src="images/plus.png" alt="" class="plusIcon" />
                     </a>
-                </div>
+                </form>
             </div>
         </div>
     </div>

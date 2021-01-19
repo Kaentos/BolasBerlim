@@ -62,6 +62,8 @@
         $stmt -> bindValue("idDisciplina", $idDisciplina);
         $stmt -> execute();
         $todosProfessores = $stmt -> fetchAll();
+    } else {
+        gotoIndex();
     }
 ?>
 
@@ -149,23 +151,14 @@
                                 <input type="checkbox" name="ficheiro1">
                             </div>
                         </div>
-                        <div class="aulaSubmicoes">
-                            <div class="aulasubmicao">
-                                <form action="">
-                                    <h4>Titulo 1</h4>
+                        <div class="aulasubmicao">
+                            <form>
+                                <div class="submi">
+                                    Submissão 1
                                     <input type="file" name="explorador" id="">
-                                    <br>
-                                    <input type="submit" value="submit">
-                                </form>
-                            </div>
-                           <div class="aulasubmicao">
-                            <form action="">
-                                <h4>Titulo 2</h4>
-                                <input type="file" name="explorador" id="">
-                                <br>
-                                <input type="submit" value="submit">
+                                    <input type="submit" class="submeterBtn" value="Submeter">
+                                </div>
                             </form>
-                           </div>
                         </div>
                     </div>
                 </div>
@@ -176,34 +169,26 @@
                 </div>
                 <div class="aulaContent">
                     <div class="aulaColumn">
-                        column 1
                         <div class="aulaFicheiros">
                             <div class="aulaFile">
                                 <a href="">ficheiro1.docx</a>
                                 <input type="checkbox" name="ficheiro1">
                             </div>
+                        </div>
+                        <div class="aulaFicheiros">
                             <div class="aulaFile">
-                                <a href="">ficheiro2.docx</a>
-                                <input type="checkbox" name="ficheiro2">
+                                <a href="">ficheiro1.docx</a>
+                                <input type="checkbox" name="ficheiro1">
                             </div>
                         </div>
-                        <div class="aulaSubmicoes">
-                            <div class="aulasubmicao">
-                                <form action="">
-                                    <h4>Titulo 1</h4>
+                        <div class="aulasubmicao">
+                            <form>
+                                <div class="submi">
+                                    Submissão 1
                                     <input type="file" name="explorador" id="">
-                                    <br>
-                                    <input type="submit" value="submit">
-                                </form>
-                            </div>
-                           <div class="aulasubmicao">
-                            <form action="">
-                                <h4>Titulo 2</h4>
-                                <input type="file" name="explorador" id="">
-                                <br>
-                                <input type="submit" value="submit">
+                                    <input type="submit" class="submeterBtn" value="Submeter">
+                                </div>
                             </form>
-                           </div>
                         </div>
                     </div>
                 </div>
