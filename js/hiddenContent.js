@@ -87,3 +87,12 @@ function novoItem() {
         content.style.display = "none";
     }
 }
+
+function inserirCodigo() {
+    var content = document.getElementById("inserirCodigo");
+    if (content.style.display === "none") {
+        content.style.display = "flex";
+    } else {
+        content.style.display = "none";
+    }
+}
