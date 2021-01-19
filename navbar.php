@@ -40,7 +40,7 @@
                 if(isset($navbar_dados)) {
                     echo "
                         <div class='dropdownBox'>
-                            <img onclick='notificacaoMenuFun()' class='profileNotificacoes' src='images/bell.png'>
+                            <img onclick='notificacaoMenuFun()' class='profileNotificacoes' src='images/sent.svg'>
                             <div id='notificacoesMenu' class='notificacoesMenu'>
                                 <div>
                                     <p>
@@ -62,14 +62,14 @@
                                         Paulo Lava: É para entregar...
                                     </p>
                                 </div>
-                                <a href='notificacoes.html' class='notificacoesBtn'>
+                                <a href='notificacoes.php' class='notificacoesBtn'>
                                     Ver todas
                                 </a>
                             </div>
                         </div>
                         <div class='dropdownBoxProfile'>
                             <a href='profile.php'>
-                                <img class='profileImg' src='images/user.png'>
+                                <img class='profileImg' src='images/mailAvatar.svg'>
                             </a>
                             <div id='profileMenu' class='profileMenus'>
                                 <div>
@@ -95,7 +95,6 @@
                 }
             ?>
             
-        </div> 
-    </div>
-           
+        </div>
+  </div>
 </header> 

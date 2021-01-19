@@ -15,7 +15,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     padding: 1%;
     background-color: #afafaf4d;
 }
@@ -78,6 +78,7 @@ header {
 .disciplina a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .infoContainer {
@@ -139,3 +140,15 @@ header {
     width: 75%;
 }
 
+.disciplina:hover {
+    color: white;
+    background-color: #2f2e41 !important;
+    font-weight: bold;
+    transition: 0.5s;
+    
+}
+
+
+h1 {
+    margin-bottom: 5px;
+}

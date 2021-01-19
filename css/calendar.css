@@ -1,4 +1,6 @@
-
+body{
+  margin: 0;
+}
   
   .explanation {
     background: var(--color);
@@ -46,12 +48,13 @@
   }
   
   .date {
-    background-color: #afafafd2;
+    background-color: #9490c76b;
     padding: 15px;
     position: relative;
-    font-size: 20px;
-    height: 155px;
+    font-size: 15px;
+    height: 120px;
     box-sizing: border-box;
+    border: 1px solid;
   }
   
   .month {
@@ -78,9 +81,18 @@
   .main-content {
     display: grid;
     grid-auto-flow: row;
-    grid-template-rows: repeat(5, 155px);
-    grid-template-columns: repeat(7, minmax(170px, 1fr));
-    margin-top: 10%;
+    grid-template-rows: repeat(5, 120px);
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    width: 90%;
+    margin: auto;
+    border: 1px solid;
+  }
+  .mainContainer {
+    margin-top: 150px;
+  }
+  .mainContainer h1{
+    margin-left: 5%;
+    margin-bottom: 5px;
   }
   
   .event {
@@ -176,47 +188,47 @@
   }
   
   .date:nth-child(-7n + 30):after {
-    content: "Fri";
+    content: "Sexta-feira";
   }
   .date:nth-child(-7n + 24):after {
-    content: "Sat";
+    content: "Sabádo";
   }
   .date:nth-child(-7n + 25):after {
-    content: "Sun";
+    content: "Domingo";
   }
   .date:nth-child(-7n + 26):after {
-    content: "Mon";
+    content: "Segunda-feira";
   }
   .date:nth-child(-7n + 27):after {
-    content: "Tue";
+    content: "Terça";
   }
   .date:nth-child(-7n + 28):after {
-    content: "Wed";
+    content: "Quarta-feira";
   }
   .date:nth-child(-7n + 29):after {
-    content: "Thu";
+    content: "Quinta-feira";
   }
   
   .date:nth-child(7n + 31):after {
-    content: "Fri";
+    content: "Sexta-feira";
   }
   .date:nth-child(7n + 32):after {
-    content: "Sat";
+    content: "Sabádo";
   }
   .date:nth-child(7n + 33):after {
-    content: "Sun";
+    content: "Domingo";
   }
   .date:nth-child(7n + 34):after {
-    content: "Mon";
+    content: "Segunda-feira";
   }
   .date:nth-child(7n + 35):after {
-    content: "Tue";
+    content: "Terça";
   }
   .date:nth-child(7n + 36):after {
-    content: "Wed";
+    content: "Quarta-feira";
   }
   .date:nth-child(7n + 37):after {
-    content: "Thu";
+    content: "Quinta-feira";
   }
 
 

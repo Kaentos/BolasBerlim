@@ -71,6 +71,9 @@
         include("navbar.php");
     ?>
     <div class="mainContainer">
+        <h1>
+            Semana X
+        </h1>
         <div class="diasSemana">
             <?php
                 foreach($semanaPeriod as $dataOmg) {
@@ -109,6 +112,9 @@
             ?>
         </div>
         <div class="content">
+            <h1>
+                Disciplinas
+            </h1>
             <div class="disciplinasContainer">
                 <?php
                     if ( isset($todasDisciplinas) ) {
