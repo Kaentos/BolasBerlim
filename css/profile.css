@@ -5,7 +5,7 @@
     margin-top: 8%;
    /* margin-left: 32.5%;*/
     width: 35%;
-    background-color: #afafaf4d;
+    background-color: #9691e3;
     font-size: 20px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 
-.editarbtn{
+/* .editarbtn{
     background-color: #6c63ff;
     color: white;
     padding: 14px 20px;
@@ -38,9 +38,26 @@
     border-radius: 4px;
     cursor: pointer;
     margin-left: 10px;
-    float: right;
     text-decoration: none;
     margin-right: 10px;
+} */
+.editarbtn{
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 2px;
 }
+.submitBtn{
+    text-align: center;
+    margin: 10px;
 
+}
 

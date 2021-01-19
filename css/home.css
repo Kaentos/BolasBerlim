@@ -145,4 +145,10 @@ header {
     background-color: #2f2e41 !important;
     font-weight: bold;
     transition: 0.5s;
+    
+}
+
+
+h1 {
+    margin-bottom: 5px;
 }

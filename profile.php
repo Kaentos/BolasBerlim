@@ -149,7 +149,7 @@
 
             if(!$eVisitante) {
                 echo "
-                    <div>
+                    <div class='submitBtn'>
                         <a href='editData.html' class='editarbtn'>Editar dados</a> 
                     </div>
                 ";

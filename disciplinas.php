@@ -64,8 +64,10 @@
     ?>
     <div class="mainContainer">
         <div class="searchbar">
-            
-            <input type="text" name="search" placeholder="search">
+            <h1>
+                Todas as disciplinas
+            </h1>
+            <input type="text" name="search" placeholder="Nome disciplina">
         </div>
         <div class="disciplinasContainer">
             <?php
