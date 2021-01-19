@@ -120,7 +120,9 @@
     </div>
     <div class="mainContainer">
         <div class="tituloContainer">
-            <p>titulo</p>
+            <p>
+                <?php echo $titulo["disciplina"] ?>
+            </p>
 
             <div class="titulobotoes">
                 <button class="titlebtn" onclick="inserirCodigo()">Inserir Codigo</button>
@@ -135,15 +137,16 @@
                 </div>
                 <div class="aulaContent">
                     <div class="aulaColumn">
-                        column 1
                         <div class="aulaFicheiros">
                             <div class="aulaFile">
                                 <a href="">ficheiro1.docx</a>
                                 <input type="checkbox" name="ficheiro1">
                             </div>
+                        </div>
+                        <div class="aulaFicheiros">
                             <div class="aulaFile">
-                                <a href="">ficheiro2.docx</a>
-                                <input type="checkbox" name="ficheiro2">
+                                <a href="">ficheiro1.docx</a>
+                                <input type="checkbox" name="ficheiro1">
                             </div>
                         </div>
                         <div class="aulaSubmicoes">
@@ -164,9 +167,6 @@
                             </form>
                            </div>
                         </div>
-                    </div>
-                    <div class="aulaColumnRight">
-                        column 4
                     </div>
                 </div>
             </div>
@@ -205,9 +205,6 @@
                             </form>
                            </div>
                         </div>
-                    </div>
-                    <div class="aulaColumnRight">
-                        column 4
                     </div>
                 </div>
             </div>
