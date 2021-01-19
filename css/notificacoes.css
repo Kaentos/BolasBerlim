@@ -7,7 +7,7 @@ header {
     flex-direction: column;
     justify-content: space-around;
     padding: 5%;
- 
+    margin-top: 5%;
 }
 
 .titlebtn {
@@ -40,10 +40,12 @@ header {
 .notificacoesRow{
     display: flex;
     flex-direction: row;
-    background-color: #afafaf4d;
+    background-color: #6c63ff;
     justify-content: space-around;
     padding: 1%;
     margin-bottom: 1%;
+    color: white;
+    font-weight: bold;
 }
 
 .Selecionado{
@@ -53,7 +55,7 @@ header {
 /*CHECK BOX*/
 
 /* O container da check box */
-.container {
+/* .container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -64,11 +66,19 @@ header {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+} */
+.container {
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* esconde check box default  */
 .container input {
-  position: absolute;
+  /* position: absolute; */
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -88,7 +98,7 @@ header {
 
 /* Adiciona um fundo azul quando a check box é selecionada */
 .container input:checked ~ .checkmark {
-  background-color: #e67500;
+    background-color: #2f2e41 !important;
 }
 
 /* Criar o marcador da check box e esconde quando nao esta selecionada */
@@ -116,4 +126,10 @@ header {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   
+}
+
+.notificacaoColuna {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
