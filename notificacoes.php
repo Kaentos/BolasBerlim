@@ -24,7 +24,7 @@
     <div class="mainContainer">
        <div class="notificacoesTitulo">
            <h1>Notificacoes</h1>
-           <a href="home.html" class="titlebtn">Marcar tudo como visto</a>
+           <a href="#" class="titlebtn">Marcar tudo como visto</a>
        </div>
        <div class="notificacoesContainer">
            <div class="notificacoesRow">
