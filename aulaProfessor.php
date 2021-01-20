@@ -138,9 +138,15 @@
             </div>
             <div class="listaAlunos">
                 <div class="descricaoLista">
-                    <p>Número de aluno:</p>
-                    <p>Nome do aluno:</p>
-                    <p>Ações:</p>
+                    <div class='dataColumTitle'>
+                        <p>Número de aluno:</p>
+                    </div>
+                    <div class='dataColumTitle'>
+                        <p>Nome do aluno:</p>
+                    </div>
+                    <div class='dataColumTitle'>
+                        <p>Ações:</p>
+                    </div>
                 </div>
                 <?php
                     if (count($todosAlunos) == 0) {
