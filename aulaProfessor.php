@@ -138,9 +138,15 @@
             </div>
             <div class="listaAlunos">
                 <div class="descricaoLista">
-                    <p>Número de aluno:</p>
-                    <p>Nome do aluno:</p>
-                    <p>Ações:</p>
+                    <div class='dataColumTitle'>
+                        <p>Número de aluno:</p>
+                    </div>
+                    <div class='dataColumTitle'>
+                        <p>Nome do aluno:</p>
+                    </div>
+                    <div class='dataColumTitle'>
+                        <p>Ações:</p>
+                    </div>
                 </div>
                 <?php
                     if (count($todosAlunos) == 0) {
@@ -357,7 +363,7 @@
                 <div class="hiddenContent">
                     <form action="" method="POST">
                         <div class="hiddenRow">
-                            <label for="codigoNome">Texto*</label>
+                            <label for="codigoNome">Notificação*</label>
                             <input type="text" name="codigoNome" id="">
                         </div>
                         <br>

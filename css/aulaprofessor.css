@@ -181,15 +181,22 @@ body{
 .listaAlunosContainer {
     display: none;
     flex-direction: column;
-    background-color: #afafaf;
+    /* background-color: #afafaf; */
+    background-color: #c3c0f9;
     width: 35%;
     position: absolute;
     padding: 2%;
     left: 32.5%;
     top: 25%;
     z-index: 1;
+    border: 2px solid #48466d;
+    border-radius: 15px;
+    animation: fadeIn 0.5s;
 }
-
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
 .tituloAlunos {
     display: flex;
     flex-direction: row;
@@ -325,6 +332,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    width: -webkit-fill-available;
 }
 .hiddenRow input[type="number"] {
     margin-left: 5%;
@@ -333,7 +341,26 @@ body{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    width: -webkit-fill-available;
 }
+.hiddenRow button {
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    align-items: center;
+    padding: 5px 5px;
+    text-align: center;
+    color: black;
+    border: 1px solid #6c63ff;
+    margin-left: 5px;
+    border-radius: 2px;
+}
+.hiddenRow button:hover {
+    color: white;
+    background-color: #2f2e41 !important;
+    transition: 0.5s;
+}
+
 
 .hiddenContent input[type=submit] {
     font-weight: bold;
@@ -446,6 +473,7 @@ body{
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 4%;
+    align-items: center;
 }
 
 .exitWindow img {
@@ -453,4 +481,8 @@ body{
 }
 .tituloHidden img {
     width: 25px;
+}
+.dataColumTitle {
+    width: 33%;
+    text-align: center;
 }

@@ -74,8 +74,10 @@ function criarNotificacao() {
     var content = document.getElementById("criarNotificacao");
     if (content.style.display === "none") {
         content.style.display = "flex";
+       
     } else {
         content.style.display = "none";
+
     }
 }
 
