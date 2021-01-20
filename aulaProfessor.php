@@ -363,7 +363,7 @@
                 <div class="hiddenContent">
                     <form action="" method="POST">
                         <div class="hiddenRow">
-                            <label for="codigoNome">Texto*</label>
+                            <label for="codigoNome">Notificação*</label>
                             <input type="text" name="codigoNome" id="">
                         </div>
                         <br>
