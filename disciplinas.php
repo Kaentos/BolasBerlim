@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/disciplinas.css">
     <script src="js/hiddenContent.js"></script>
-
+    <link rel="icon" href="images/logo.svg">
     <title>Todas as disciplinas</title>
 </head>
 <body>

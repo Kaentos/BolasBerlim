@@ -70,7 +70,7 @@
     <link rel="stylesheet" href="css/formGestao.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hiddenContent.js"></script>
-
+    <link rel="icon" href="images/logo.svg">
     <title>Admin | Dashboard</title>
 </head>
 <body>

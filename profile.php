@@ -87,7 +87,8 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hiddenContent.js"></script>
-    <title>Perfil</title>
+    <title>Perfil | <?php echo $infoPerfil["nome"]; ?></title>
+    <link rel="icon" href="images/logo.svg">
 </head>
 <body>
     <?php

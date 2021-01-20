@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hiddenContent.js"></script>
-
+    <link rel="icon" href="images/logo.svg">
     <title>Página inicial</title>
 </head>
 <body>

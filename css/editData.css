@@ -4,9 +4,11 @@
     justify-content: space-around;
     padding: 5%;
     text-align: center;
+    margin-top: 50px;
 }
 .mainContainer p{
     font-size: 25px;
+    font-weight: bold;
 }
 
 .formContainerPessoas {

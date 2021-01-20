@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/notificacoes.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hiddenContent.js"></script>
-
-    <title>Document</title>
+    <link rel="icon" href="images/logo.svg">
+    <title>Notificações</title>
 </head>
 <body>
     <?php

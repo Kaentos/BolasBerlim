@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/calendar.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/hiddenContent.js"></script>
-    <title>Document</title>
+    <link rel="icon" href="images/logo.svg">
+    <title>Calendário</title>
   </head>
   <body>
     <?php

@@ -107,6 +107,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/aulaprofessor.css" />
     <script src="js/hiddenContent.js"></script>
+    <link rel="icon" href="images/logo.svg">
     <title>
         <?php
             echo $titulo["anoLetivo"]  ." - ". $titulo["disciplina"] ." | ". $titulo["curso"];
