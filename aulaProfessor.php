@@ -447,96 +447,19 @@
             </div>
         </div>
         <div class="listaAulas">
-            <div class="aulaContainer">
-                <div class="aulaHeader">
-                    <div class="aulaTitulo">
-                        <div>
-                            Aula 1 - 20/10/1928 | 8:30 - 20:30
-                        </div>
-                        <div class="profMenu">
+            <?php
+            foreach($aulas as $aula) {
+                echo '
+                <div class="aulaContainer">
+                    <div class="aulaHeader">
+                        <div class="aulaTitulo">
                             <div>
-                                <a href="">
-                                    <img src="images/visto.png" alt="" class="profbtn"/>
-                                </a>
+                                '.$aula["nome"].'
                             </div>
-                            <div>
-                                <a href="">
-                                    <img src="images/apagar.png" alt="" class="profbtn"/>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="">
-                                    <img src="images/lista.png" alt="" class="profbtn"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="cursor:pointer;" class="inserirFicheiro" onclick="novoItem()">
-                        <div>
-                            Novo Item
-                        </div>
-                        <div>
-                            <img src="images/add.svg" alt="" class="plusIcon"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="aulaContent">
-                    <div class="aulaColumn">
-                        <div class="aulaFicheiros">
-                            <div class="aulaFile">
-                                <a href="">
-                                    ficheiro1.docx
-                                </a>
-                                <div class="profMenu">
-                                    <div>
-                                        <a href="">
-                                            <img src="images/visto.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/apagar.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/lista.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="aulaFicheiros">
-                            <div class="aulaFile">
-                                <a href="">
-                                    ficheiro2.docx
-                                </a>
-                                <div class="profMenu">
-                                    <div>
-                                        <a href="">
-                                            <img src="images/visto.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/apagar.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a href="">
-                                            <img src="images/lista.png" alt="" class="profbtn"/>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="aulasubmicao">
-                            <div class="submissaoTitulo">Submissão Trabalho 1</div>
                             <div class="profMenu">
                                 <div>
                                     <a href="">
-                                        <img src="images/visto.png" alt="" class="profbtn"/>
+                                        <img src="images/visto.png" '. $aula["visivel"] ? "style='background-color: rgba(0,0,0,0.5)'" : "".' alt="" class="profbtn"/>
                                     </a>
                                 </div>
                                 <div>
@@ -544,46 +467,56 @@
                                         <img src="images/apagar.png" alt="" class="profbtn"/>
                                     </a>
                                 </div>
-                                <div>
-                                    <button>
-                                        <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
-                                    </button>
-                                </div>
                             </div>
                         </div>
-                        <div class="aulasubmicao">
-                            <div class="submissaoTitulo">Titulo 2</div>
-                            <div class="profMenu">
-                                <div>
-                                    <a href="">
-                                        <img src="images/visto.png" alt="" class="profbtn"/>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="">
-                                        <img src="images/apagar.png" alt="" class="profbtn"/>
-                                    </a>
-                                </div>
-                                <div>
-                                    <button>
-                                        <img src="images/lista.png" onclick="listaFicheirosMenu()"/>
-                                    </button>
-                                </div>
+                        <div style="cursor:pointer;" class="inserirFicheiro" onclick="novoItem()">
+                            <div>
+                                Novo Item
+                            </div>
+                            <div>
+                                <img src="images/add.svg" alt="" class="plusIcon"/>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                    <div class="aulaContent">
+                        <div class="aulaColumn">
+                            <div class="aulaFicheiros">
+                ';
+                foreach ($aula["ficheiros"] as $ficheiro) {
+                    echo '
+                                <div class="aulaFile">
+                                    <a href="php/ficheiro.php?f='.$ficheiro["codigo"].'">
+                                        '.$ficheiro["nome"].'
+                                    </a>
+                                    <div class="profMenu">
+                                        <div>
+                                            <a href="">
+                                                <img src="images/visto.png" '. $aula["visivel"] ? "style='background-color: rgba(0,0,0,0.5)'" : "".' alt="" class="profbtn"/>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="">
+                                                <img src="images/apagar.png" alt="" class="profbtn"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>           
+                        </div>
+                    </div>
+                    ';
+                }
+            }
+            ?>
                 <h2 class="customH2">Nova Aula</h2>
-                <form class="newAula">
+                <form class="newAula" id="newAulaForm" method="post" action="php/adicionar_divisor.php">
                     <div>
                         Nome do divisor:
                         <input type="text" name="nomeAula" />
                     </div>
-                    
-                    <a href="">
-                        <img src="images/folder.svg" alt="" class="plusIcon" />
-                    </a>
+                    <input type="hidden" name="disciplina" value="<?php echo $_GET["disciplina"]; ?>">
+                    <input type="hidden" name="turma" value="<?php echo $_GET["turma"]; ?>">
+                    <img onclick="document.getElementById('newAulaForm').submit()" src="images/folder.svg" alt="Submeter nova aula" title="Submeter nova aula" class="plusIcon" />
                 </form>
             </div>
         </div>

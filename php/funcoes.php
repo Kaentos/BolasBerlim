@@ -6,6 +6,8 @@
     define("TIPO_ALUNO", "Aluno");
     define("TIPO_PROFESSOR", "Professor");
     define("TAMANHO_CODIGO", 6);
+    define("RL_FILE_MAX_SIZE", 100000000); // 100MB
+    define("RL_FILE_DIR", $_SERVER["DOCUMENT_ROOT"]."/Real-Learn/user_files/");
 
     // https://stackoverflow.com/questions/4356289/php-random-string-generator
     function generateRandomString($length) {
